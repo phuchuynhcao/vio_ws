@@ -1,0 +1,182 @@
+%YAML:1.0
+cameras:
+    # IMU-Cam-Cam calibration, using IMU-calibrated model (dataset calib100-5)
+    - {T_SC:
+       [ 0.999903595053, -0.00937336440212, -0.0102440539253, -0.0207574809664,
+         0.0102409589422, -0.000378128018062, 0.999947488511, 0.0517203674719,
+         -0.0093767457566, -0.999955997561, -0.000282099324659, -0.00502781573154,
+          0.0, 0.0, 0.0, 1.0],
+        # [ 0.999900820155, -0.00938596532514, -0.0105001670729, -0.0213808523894,
+        #   0.0104777554839, -0.00243377037026, 0.999942145027, 0.0503600812868,
+        #  -0.00941097729587, -0.999952989103, -0.00233518513964, -0.00316241685426,
+        #   0.0, 0.0, 0.0, 1.0],
+
+       image_dimension: [640, 480],
+       distortion_coefficients: [-0.0490119258404, 0.0737192391574, -0.131958494363, 0.0794102356161],
+       distortion_type: equidistant,
+       focal_length: [528.178955967, 528.097903954],
+       principal_point: [321.421545109, 251.251633353]}
+
+    - {T_SC:
+       [ 0.999877015183, -0.00863665840007, -0.0130905553624, 0.099072556877,
+         0.013074966168, -0.00185900611653, 0.999912790875, 0.0537794066244,
+         -0.00866024062713, -0.999960975353, -0.00174585347062, -0.00565922146172,
+          0.0, 0.0, 0.0, 1.0],
+        # [ 0.99987352353, -0.00864888012306, -0.0133466781172, 0.098448646128,
+        #   0.0133132210591, -0.00391446685141, 0.999903712912, 0.0524485076266,
+        #  -0.00870029247664, -0.999954935896, -0.00379882731047, -0.00379963383393,
+        #   0.0, 0.0, 0.0, 1.0],
+
+       image_dimension: [640, 480],
+       distortion_coefficients: [-0.0317204347219, -0.0593280337515, 0.217096651491, -0.227752655667],
+       distortion_type: equidistant,
+       focal_length: [530.358837467, 530.216967436],
+       principal_point: [322.143524164, 252.18558997]}
+
+camera_params:
+    camera_rate: 20 # Although we have downsampled the camera rate in the dataset to 10fps, leaving this field 20fps seem give better result! May be the camera process loop wll be called faster?
+    sigma_absolute_translation: 0.0 # 0 # 1.0e-10
+    sigma_absolute_orientation: 0.0 # 0 1.0e-3
+    sigma_c_relative_translation: 0.0 # 0 # below 1.0e-6 ruines numerics...
+    sigma_c_relative_orientation: 0.0 # 0 # below 1.0e-6 ruines numerics...
+    timestamp_tolerance: 0.005 # [s] stereo frame out-of-sync tolerance
+    
+imu_params:
+    a_max: 176.5 # acceleration saturation [m/s^2]
+    g_max: 8.3  # gyro saturation [rad/s]
+
+    ## sigma set 3 (Indoor, no shock)
+    # sigma_g_c: 0.002 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.005 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    # ## sigma set 6 (Outdoor, low velocity, low shock, x10 noise)
+    sigma_g_c: 0.02 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.05 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    # sigma set 29 (Outdoor, medium velocity, medium shock, x20 noise)
+    # sigma_g_c: 0.04 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.1 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    # # sigma set 30 (Outdoor, medium velocity, medium shock, x15 noise)
+    # sigma_g_c: 0.03 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.075 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 31 (Outdoor, medium velocity, medium shock, x15 noise, aw 5.5)
+    # sigma_g_c: 0.03 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.075 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.000055 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 32 (Outdoor, medium velocity, medium shock, x15 noise, aw 2)
+    # sigma_g_c: 0.03 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.075 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00002 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 27 (Outdoor, very large sock, noise)
+    # sigma_g_c: 0.2 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.8 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    # ## sigma set 33 (Outdoor, low shock, x5 noise)
+    # sigma_g_c: 0.01 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.025 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 34 (Outdoor, low shock, x3 noise)
+    # sigma_g_c: 0.006 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.015 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    tau: 3600.0  # reversion time constant, currently not in use [s]
+    g:  9.80665 #okvis: 9.81007, my: 9.80665 # Earth's acceleration due to gravity [m/s^2]
+    a0: [ 0.0, 0.0, 0.0 ] # Accelerometer bias [m/s^2]
+    imu_rate: 500
+    T_BS:   
+        [1.0000, 0.0000, 0.0000, 0.0000,
+        0.0000, 1.0000, 0.0000, 0.0000,
+        0.0000, 0.0000, 1.0000, 0.0000,
+        0.0000, 0.0000, 0.0000, 1.0000]     # tranform Body-Sensor (IMU)
+
+# Estimator parameters
+numKeyframes: 7 # (KF) number of keyframes in optimisation window
+numImuFrames: 4 # (CF) number of frames linked by most recent nonlinear IMU error terms
+# ceres optimization options
+ceres_options:
+    minIterations: 3   # minimum number of iterations always performed
+    maxIterations: 10  # never do more than these, even if not converged
+    timeLimit: -1 #0.035  # [s] negative values will set the an unlimited time limit
+# detection
+detection_options:
+    threshold: 50.0      # detection threshold. By default the uniformity radius in pixels
+                         # thres = 35 -- avg keypoint no. = 150 -- framerate = 10 Hz
+                         # thres = 50 -- avg keypoint no. = 80  -- framerate = 20 Hz (realtime)
+    octaves: 0           # number of octaves for detection. 0 means single-scale at highest resolution
+    maxNoKeypoints: 200  # restrict to a maximum of this many keypoints per image (strongest ones)
+
+# delay of images [s]:
+imageDelay: 0.0  # in case you are using a custom setup, you will have to calibrate this. 0 for the VISensor.
+
+# display debug images?
+displayImages: true # displays debug video and keyframe matches. May be slow.
+
+# use direct driver (only when use the ETH's VIOSensors)
+useDriver: false
+
+# use the IMU at all?
+useImu: true
+
+# save optimization to disk (not working)
+#saveGraphs: true  
+
+# try to obtain calibration via topic
+# tryTopic: false
+
+# try to obtain calibration via service call
+# tryService: false
+
+# some options for how and what to publish -- optional in ROS-free version
+publishing_options:
+    publish_rate: 50                   # rate at which odometry updates are published only works properly if imu_rate/publish_rate is an integer!!
+    publishLandmarks: false            # select, if you want to publish landmarks at all
+    landmarkQualityThreshold: 1.0e-2   # landmark with lower quality will not be published
+    maximumLandmarkQuality: 0.05       # landmark with higher quality will be published with the maximum colour intensity
+    maxPathLength: 20                  # maximum length of the published path
+    publishImuPropagatedState: frue  # Should the state that is propagated with IMU messages be published? Or just the optimized ones?
+    # provide custom World frame Wc
+    T_Wc_W:
+        [1.0000, 0.0000, 0.0000, 0.0000,
+         0.0000, 1.0000, 0.0000, 0.0000,
+         0.0000, 0.0000, 1.0000, 0.0000,
+         0.0000, 0.0000, 0.0000, 1.0000]
+    trackedBodyFrame: B                # B or S, the frame of reference that will be expressed relative to the selected worldFrame
+    velocitiesFrame: Wc                # Wc, B or S,  the frames in which the velocities of the selected trackedBodyFrame will be expressed in

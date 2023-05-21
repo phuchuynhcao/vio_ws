@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/nguyen/test_ws/devel/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/nguyen/test_ws/src/test/include/**",
+                "/usr/include/**",
+                "${workspaceFolder}/src/devices/trigger/include",
+                "${workspaceFolder}/src/devices/serial/include",
+                "${workspaceFolder}/src/devices/imu/include",
+                "${workspaceFolder}/src/devices/span/include"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

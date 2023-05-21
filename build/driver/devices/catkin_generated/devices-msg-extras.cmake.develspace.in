@@ -1,0 +1,2 @@
+set(devices_MESSAGE_FILES "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg;/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg;/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg;/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg;/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg;/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg")
+set(devices_SERVICE_FILES "")

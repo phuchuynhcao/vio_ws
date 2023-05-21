@@ -1,0 +1,20 @@
+<launch>
+    <!-- <arg name="config" value="/home/nguyen/okvis_ros_ws/src/okvis_ros/okvis/config/config_fpga_p2_euroc.yaml" /> -->
+    <!-- <arg name="bag" value="/home/nguyen/euroc_dataset/MH_04_difficult.bag" /> -->
+
+  <!-- <arg name="deltaT" value="0.1" /> -->
+  <arg name="config" value="$(find okvis_ros)/okvis/config/config_myVIO_imu_500Hz.yaml" /> 
+  <arg name="bag" value="/home/nguyen/dataset/VLTK2_2020-08-01-10-19-50.bag" />
+
+<!-- <arg name="bag" value="/media/nguyen/Data/Master/MasterStudy/Research/Program/Dataset_Result/2020-07_Outdoor/2020-07-30/bag/LTK2C_2020-07-30.bag" /> -->
+
+  <node name="okvis_node" pkg="okvis_ros" type="okvis_node_synchronous" output="screen" args="$(arg config) $(arg bag)" >
+    <param name="mesh_file" value="firefly.dae" />
+    <param name="camera_topic_0" value="/cam0/image_raw" />
+    <param name="camera_topic_1" value="/cam1/image_raw" />
+    <param name="imu_topic" value="/imu0" />
+  </node>
+
+  <!-- <arg name="rviz_config" default="$(find okvis_ros)/config/rviz_mesh.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)"/> -->
+</launch>

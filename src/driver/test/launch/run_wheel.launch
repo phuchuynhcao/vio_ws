@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Run slider node -->
+  <!-- <node pkg="devices" type="slider_node" name="slider_node" output="screen" args="/dev/ttyUSB2" /> -->
+
+  <!-- Run wheel node -->
+  <node pkg="devices" type="wheel_node" name="wheel_node" output="screen" args="/dev/ttyUSB3" />
+
+    <!-- Run SPAN-CPT driver-->
+  <!-- <node pkg="devices" type="span_node" name="span_node" output="screen" args="/dev/ttyUSB2" />  -->
+
+</launch>

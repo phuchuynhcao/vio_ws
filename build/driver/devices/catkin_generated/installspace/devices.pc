@@ -1,0 +1,8 @@
+prefix=/home/nguyen/vio_ws/install
+
+Name: devices
+Description: Description of devices
+Version: 1.2.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ldevices -lrt -lpthread
+Requires: message_runtime

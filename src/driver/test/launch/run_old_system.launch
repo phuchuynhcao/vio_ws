@@ -1,0 +1,59 @@
+<launch>
+
+  <!-- Arguments -->
+  <arg name="cam_shutter_time" default="0" />  <!-- shutter-time [msec] -->
+  <arg name="use_slider" default="1" /> <!-- 0: no slider, 1: use slider-->
+
+  <!-- Run IMU driver-->
+  <node pkg="devices" type="imu_node" name="imu_node" args="/dev/ttyUSB2" /> 
+  <!--Display imu data-->
+  <!-- <node pkg="rostopic" type="rostopic" name="imu_echo" output="screen"
+       args="echo /imu0" /> --> 
+
+  <!-- Run trigger driver -->
+  <node pkg="devices" type="trigger_node" name="trigger_node" output="screen"
+       args="/dev/ttyUSB0 $(arg cam_shutter_time) $(arg use_slider)" >
+  </node>
+
+  <!-- Run slider driver -->
+  <!-- <group if="$(arg use_slider)">
+    <node pkg="devices" type="slider_node" name="slider_node" args="/dev/ttyUSB1" output="screen"/>
+  </group> -->
+
+  <!-- Run wheel driver -->
+  <node pkg="devices" type="wheel_node" name="wheel_node" output="screen" args="/dev/ttyUSB3" /> 
+
+  <!-- Run SPAN-CPT driver-->
+  <!-- <node pkg="devices" type="span_node" name="span_node" output="screen" args="/dev/ttyUSB3" />  -->
+
+  <!-- Run SOUTH RTK driver-->
+  <node pkg="devices" type="rtk_node" name="rtk_node" output="screen" args="/dev/ttyUSB1" /> 
+
+  <!-- Run Stereo Camera driver -->
+  <node pkg="camera1394stereo" type="camera1394stereo_node" name="camera1394stereo_node">
+    <rosparam file="$(find camera1394stereo)/config/format7_mode3_trig.yaml" command="load"/>
+    <param name="my_shutter_time" value="$(arg cam_shutter_time)"/>
+    <remap from="stereo_camera/left/image_raw" to="cam0/image_raw" />
+    <remap from="stereo_camera/right/image_raw" to="cam1/image_raw" />
+  </node>
+
+  <!-- Display raw (not rectified) image -->
+  <!-- <node pkg="image_view" type="image_view" name="image_view_cam0_raw">
+     <remap from="image" to="cam0/image_raw" />
+   </node>
+  <node pkg="image_view" type="image_view" name="image_view_cam1_raw">
+     <remap from="image" to="cam1/image_raw" />
+  </node> -->
+
+  <!-- Camera image processing (color + rectification) -->
+  <!-- <node ns="stereo_camera" pkg="stereo_image_proc"
+        type="stereo_image_proc" name="stereo_image_proc" output="screen"/> -->
+
+  <!-- Record IMU and StereoCam Data -->
+  <node pkg="rosbag" type="record" name="bag_record"
+      	args="-o /home/nguyen/dataset/ /imu0 /cam0/image_raw /cam1/image_raw /span /wheel /rtk" > 
+  </node>
+
+  	<!-- args="-o /home/nguyen/dataset/ /imu0 /cam0/image_raw /cam1/image_raw /span /wheel" >  -->
+
+</launch>

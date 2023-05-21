@@ -1,0 +1,12 @@
+(cl:in-package devices-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          ENCODER_VELOCITY_LEFT-VAL
+          ENCODER_VELOCITY_LEFT
+          ENCODER_VELOCITY_RIGHT-VAL
+          ENCODER_VELOCITY_RIGHT
+          ENCODER_POSITION_LEFT-VAL
+          ENCODER_POSITION_LEFT
+          ENCODER_POSITION_RIGHT-VAL
+          ENCODER_POSITION_RIGHT
+))

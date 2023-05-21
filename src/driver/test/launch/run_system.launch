@@ -1,0 +1,47 @@
+<launch>
+ <!-- Arguments -->
+  <arg name="cam_shutter_time" default="0" />  <!-- shutter-time [msec]. 0: auto-shutter -->
+  <arg name="use_slider" default="0" /> <!-- 0: no slider, 1: use slider (to generate trigger pulse or not)-->
+
+  <!-- Run IMU driver-->
+  <node pkg="devices" type="imu_node" name="imu_node" output="screen" args="/dev/ttyUSB3" /> 
+
+  <!-- Run trigger driver -->
+  <node pkg="devices" type="trigger_node" name="trigger_node" output="screen"
+       args="/dev/ttyUSB0 $(arg cam_shutter_time) $(arg use_slider)" >
+  </node>
+
+  <!-- Run Stereo Camera driver -->
+  <node pkg="camera1394stereo" type="camera1394stereo_node" name="camera1394stereo_node" output="screen">
+    <rosparam file="$(find camera1394stereo)/config/format7_mode3_trig.yaml" command="load"/>
+    <param name="my_shutter_time" value="$(arg cam_shutter_time)"/>
+    <remap from="stereo_camera/left/image_raw" to="cam0/image_raw" />
+    <remap from="stereo_camera/right/image_raw" to="cam1/image_raw" />
+  </node>
+
+  <!-- Display raw (not rectified) image -->
+  <!-- <node pkg="image_view" type="image_view" name="image_view_cam0_raw">
+     <remap from="image" to="cam0/image_raw" />
+  </node>
+  <node pkg="image_view" type="image_view" name="image_view_cam1_raw">
+     <remap from="image" to="cam1/image_raw" />
+  </node> -->
+  
+  <!-- Run gps node -->
+  <node pkg="devices" type="gps_node" name="gps_M8N_node" output="screen" args="M8N /dev/ttyUSB1 115200" />
+
+  <!-- Run wheel node -->
+  <node pkg="devices" type="wheel_node" name="wheel_node" output="screen" args="/dev/ttyUSB2" />
+
+  <!-- Run SPAN-CPT driver-->
+  <node pkg="devices" type="span_node" name="span_node" output="screen" args="/dev/ttyS0" /> 
+
+  <!-- Run rtk node -->
+  <!-- <node pkg="devices" type="gps_node" name="gps_S82_node" output="screen" args="S82 /dev/ttyS2 115200" /> -->
+
+  <!-- Record IMU and StereoCam Data -->
+  <node pkg="rosbag" type="record" name="bag_record"
+      	args="-o /home/nguyen/dataset/ /imu0 /cam0/image_raw /cam1/image_raw /gps_M8N /span /wheel" > 
+  </node> 
+
+</launch>

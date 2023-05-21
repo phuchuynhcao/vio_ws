@@ -1,0 +1,21 @@
+<launch>
+  <!--Play bag file-->
+  <arg name="bagdir" default="/home/autolab/Share" />
+  <arg name="bagfile" default="$(arg bagdir)/_2019-11-10-17-42-08_xichdu.bag"/>
+<!--  <arg name="bagfile" default="$(arg bagdir)/_2019-11-10-18-12-49_xichdu_2.bag" />-->
+  <node pkg="rosbag" type="play" name="bag_player"
+        args="--clock $(arg bagfile)" />
+
+  <!-- Display raw (not rectified) image -->
+  <node pkg="image_view" type="image_view" name="image_view_cam0_raw">
+    <remap from="image" to="cam0/image_raw" />
+  </node>
+  <node pkg="image_view" type="image_view" name="image_view_cam1_raw">
+    <remap from="image" to="cam1/image_raw" />
+  </node>
+
+  <!--Display imu data-->
+  <node pkg="rostopic" type="rostopic" name="imu_echo" output="screen"
+        args="echo /imu0" />
+
+</launch>

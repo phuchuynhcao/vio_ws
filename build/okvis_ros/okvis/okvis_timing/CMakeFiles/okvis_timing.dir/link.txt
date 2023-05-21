@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/nguyen/vio_ws/devel/lib/libokvis_timing.a  CMakeFiles/okvis_timing.dir/src/Timer.cpp.o CMakeFiles/okvis_timing.dir/src/NsecTimeUtilities.cpp.o
+/usr/bin/ranlib /home/nguyen/vio_ws/devel/lib/libokvis_timing.a

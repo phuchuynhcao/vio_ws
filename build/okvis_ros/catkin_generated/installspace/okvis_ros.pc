@@ -1,0 +1,8 @@
+prefix=/home/nguyen/vio_ws/install
+
+Name: okvis_ros
+Description: Description of okvis_ros
+Version: 1.1.3
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lokvis_ros
+Requires: 

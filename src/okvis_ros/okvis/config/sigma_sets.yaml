@@ -1,0 +1,127 @@
+ ## sigma set 3 (Indoor, no shock)
+    sigma_g_c: 0.002 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.005 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 6 (Outdoor, x10 noise density)
+    sigma_g_c: 0.02 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.05 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 12 (Outdoor)
+    sigma_g_c: 0.003 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.01 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.01 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.01 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.000015  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00004 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 13 (Outdoor, x5 noise)
+    sigma_g_c: 0.01 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.03 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 14 (Outdoor, x15 noise density, x1.5 drift and prior)
+    sigma_g_c: 0.03 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.075 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.003 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.0075 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00003  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.000075 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 15 (Outdoor, x15 noise density, no change in drift and prior)
+    sigma_g_c: 0.03 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.08 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 16 (Outdoor, x5 noise density, no change in drift and prior)
+    sigma_g_c: 0.01 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.025 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 17 (Outdoor, x20 noise density, no change in drift and prior)
+    sigma_g_c: 0.04 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.2 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 18 (Outdoor, x30 noise density, no change in drift and prior)
+    sigma_g_c: 0.06 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.15 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 19 (Outdoor, x20 noise density, drift and prior x1.5)
+    sigma_g_c: 0.04 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.2 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.003 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.008 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00003  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00008 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 23 (Outdoor, x15 noise density, no change in drift and prior)
+    sigma_g_c: 0.03 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.3 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 24 (Outdoor, x15 noise density, no change in drift and prior)
+    sigma_g_c: 0.04 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.4 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 25 (Outdoor, x15 noise density, no change in drift and prior)
+    sigma_g_c: 0.06 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.6 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 26 (Outdoor, x15 noise density, no change in drift and prior)
+    sigma_g_c: 0.1 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 1.0 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 27 (Outdoor, very large noise density, no change in drift and prior)
+    sigma_g_c: 0.2 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 0.8 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+
+    ## sigma set 28 (Outdoor, x15 noise density, no change in drift and prior)
+    sigma_g_c: 0.3 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 1.0 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]

@@ -1,0 +1,59 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7956f/fast"
+make[3]: Entering directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_7956f.dir/build.make CMakeFiles/cmTC_7956f.dir/build
+make[4]: Entering directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7956f.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_7956f.dir/CheckSymbolExists.c.o   -c /home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7956f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7956f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_7956f.dir/CheckSymbolExists.c.o  -o cmTC_7956f -rdynamic 
+CMakeFiles/cmTC_7956f.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7956f.dir/build.make:97: recipe for target 'cmTC_7956f' failed
+make[4]: *** [cmTC_7956f] Error 1
+make[4]: Leaving directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7956f/fast' failed
+make[3]: *** [cmTC_7956f/fast] Error 2
+make[3]: Leaving directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+
+File /home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dcf0e/fast"
+make[3]: Entering directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_dcf0e.dir/build.make CMakeFiles/cmTC_dcf0e.dir/build
+make[4]: Entering directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dcf0e.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_dcf0e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dcf0e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcf0e.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_dcf0e.dir/CheckFunctionExists.c.o  -o cmTC_dcf0e -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_dcf0e.dir/build.make:97: recipe for target 'cmTC_dcf0e' failed
+make[4]: *** [cmTC_dcf0e] Error 1
+make[4]: Leaving directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_dcf0e/fast' failed
+make[3]: *** [cmTC_dcf0e/fast] Error 2
+make[3]: Leaving directory '/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/CMakeFiles/CMakeTmp'
+
+

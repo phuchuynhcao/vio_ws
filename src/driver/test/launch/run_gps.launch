@@ -1,0 +1,13 @@
+<launch>
+  <!-- Run gps node of Ublox M8N  -->
+  <!-- <node pkg="devices" type="gps_node" name="gps_M8N_node" output="screen" args="M8N /dev/ttyUSB0 921600" /> -->
+
+  <!-- Run gps node of South S82 -->
+  <node pkg="devices" type="gps_node" name="gps_S82_node" output="screen" args="S82 /dev/ttyS2 115200" />
+
+  <!-- Record IMU and StereoCam Data -->
+  <!-- <node pkg="rosbag" type="record" name="bag_record"
+      	args="-o /home/nguyen/dataset/data /gps_M8N /gps_S82" > 
+  </node>  -->
+
+</launch>
