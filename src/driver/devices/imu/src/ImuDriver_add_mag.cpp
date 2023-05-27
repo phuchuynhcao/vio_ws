@@ -35,7 +35,7 @@ void ImuDriver::run()
   }
 
   /* Define imu frame length */
-  frame_length_ = 74; // 74 without magnetormeter, 92 with magnetormeter
+  frame_length_ = 92; // 74 without magnetormeter, 92 with magnetormeter
 
   /* Define imu time shift */
   double Td2 = 4.4; // 4.2 ms without magnetometer // 4.4 ms with magnetometer
@@ -72,9 +72,9 @@ void ImuDriver::run()
       acc_[1] = stod(str_recv_.substr(56,6));
       acc_[2] = stod(str_recv_.substr(63,6));
 
-      // mag_[0] = stod(str_recv_.substr(70,5));
-      // mag_[1] = stod(str_recv_.substr(76,5));
-      // mag_[2] = stod(str_recv_.substr(82,5));
+      mag_[0] = stod(str_recv_.substr(70,5));
+      mag_[1] = stod(str_recv_.substr(76,5));
+      mag_[2] = stod(str_recv_.substr(82,5));
 
       // Change axis direction to like datasheet
       msg_imu_.orientation.x = (eul_[0]/1000)*M_PI/180; // mdeg -> deg -> rad
@@ -89,9 +89,9 @@ void ImuDriver::run()
       msg_imu_.linear_acceleration.y = (acc_[1]/10000)*M_GRV;
       msg_imu_.linear_acceleration.z = (acc_[2]/10000)*M_GRV;
 
-      // msg_imu_.orientation_covariance[0] = mag_[0]/10;   // 0.1 mgauss -> mgauss
-      // msg_imu_.orientation_covariance[1] = mag_[1]/10;   // use the orientation_covariane field since there is no field for magnetometer
-      // msg_imu_.orientation_covariance[2] = mag_[2]/10;  
+      msg_imu_.orientation_covariance[0] = mag_[0]/10;   // 0.1 mgauss -> mgauss
+      msg_imu_.orientation_covariance[1] = mag_[1]/10;   // use the orientation_covariane field since there is no field for magnetometer
+      msg_imu_.orientation_covariance[2] = mag_[2]/10;  
 
       // If only change Z axis acceleration
       /*
@@ -108,7 +108,7 @@ void ImuDriver::run()
       
       msg_imu_.header.stamp.sec = t_imu_.sec;
       msg_imu_.header.stamp.nsec = t_imu_.nsec;
-      msg_imu_.header.frame_id = str_recv_.substr(70,2); // 70 without magnetormeter, 88 with magnetormeter
+      msg_imu_.header.frame_id = str_recv_.substr(88,2);
 
       pub_imu_.publish(msg_imu_);
 
