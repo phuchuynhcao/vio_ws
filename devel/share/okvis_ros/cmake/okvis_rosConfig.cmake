@@ -67,14 +67,14 @@ set(okvis_ros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(okvis_ros_SOURCE_PREFIX /home/nguyen/vio_ws/src/okvis_ros)
-  set(okvis_ros_DEVEL_PREFIX /home/nguyen/vio_ws/devel)
+  set(okvis_ros_SOURCE_PREFIX /home/phuccao/OKVIS/vio_ws/src/okvis_ros)
+  set(okvis_ros_DEVEL_PREFIX /home/phuccao/OKVIS/vio_ws/devel)
   set(okvis_ros_INSTALL_PREFIX "")
   set(okvis_ros_PREFIX ${okvis_ros_DEVEL_PREFIX})
 else()
   set(okvis_ros_SOURCE_PREFIX "")
   set(okvis_ros_DEVEL_PREFIX "")
-  set(okvis_ros_INSTALL_PREFIX /home/nguyen/vio_ws/install)
+  set(okvis_ros_INSTALL_PREFIX /home/phuccao/OKVIS/vio_ws/install)
   set(okvis_ros_PREFIX ${okvis_ros_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(okvis_ros_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/nguyen/vio_ws/devel/include;/home/nguyen/vio_ws/src/okvis_ros/include " STREQUAL " ")
+if(NOT "/home/phuccao/OKVIS/vio_ws/devel/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/include " STREQUAL " ")
   set(okvis_ros_INCLUDE_DIRS "")
-  set(_include_dirs "/home/nguyen/vio_ws/devel/include;/home/nguyen/vio_ws/src/okvis_ros/include")
+  set(_include_dirs "/home/phuccao/OKVIS/vio_ws/devel/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/nguyen/vio_ws/devel/include;/home/nguyen/vio_ws/src/okvis_ros/incl
         message(FATAL_ERROR "Project 'okvis_ros' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'okvis_ros' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/nguyen/vio_ws/src/okvis_ros/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'okvis_ros' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/phuccao/OKVIS/vio_ws/src/okvis_ros/${idir}'.  ${_report}")
     endif()
     _list_append_unique(okvis_ros_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/nguyen/vio_ws/devel/lib;/home/nguyen/vio_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/phuccao/OKVIS/vio_ws/devel/lib;/home/phuccao/OKVIS/vio_ws/devel/lib;/home/phuccao/catkin_ws_FASTLIO_realtime/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(okvis_ros_LIBRARIES ${okvis_ros_LIBRARIES})
 
   _list_append_unique(okvis_ros_LIBRARY_DIRS ${${okvis_ros_dep}_LIBRARY_DIRS})
-  list(APPEND okvis_ros_EXPORTED_TARGETS ${${okvis_ros_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(okvis_ros_EXPORTED_TARGETS ${${okvis_ros_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

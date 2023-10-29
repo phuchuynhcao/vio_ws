@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/okvis_ros/dataset_convertor"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/okvis_ros/dataset_convertor.pdb"
   "CMakeFiles/dataset_convertor.dir/src/dataset_convertor.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/okvis_ros/dataset_convertor.pdb"
-  "/home/nguyen/vio_ws/devel/lib/okvis_ros/dataset_convertor"
 )
 
 # Per-language clean rules from dependency scanning.

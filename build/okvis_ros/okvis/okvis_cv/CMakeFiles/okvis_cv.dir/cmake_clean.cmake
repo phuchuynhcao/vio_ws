@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_cv.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_cv.pdb"
   "CMakeFiles/okvis_cv.dir/src/CameraBase.cpp.o"
   "CMakeFiles/okvis_cv.dir/src/NCameraSystem.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_cv.pdb"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_cv.a"
 )
 
 # Per-language clean rules from dependency scanning.

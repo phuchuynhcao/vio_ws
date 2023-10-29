@@ -1,8 +1,8 @@
-# Install script for directory: /home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_frontend
+# Install script for directory: /home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_frontend
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/nguyen/vio_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/phuccao/OKVIS/vio_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,27 +32,32 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "lib")
-  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/install/lib/libokvis_frontend.a")
-  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/install/lib" TYPE STATIC_LIBRARY FILES "/home/nguyen/vio_ws/devel/lib/libokvis_frontend.a")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "dev")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/install/include/")
+   "/home/phuccao/OKVIS/vio_ws/install/lib/libokvis_frontend.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/install/include" TYPE DIRECTORY FILES "/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_frontend/include/" FILES_MATCHING REGEX "/[^/]*\\.hpp$")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/install/lib" TYPE STATIC_LIBRARY FILES "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_frontend.a")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/phuccao/OKVIS/vio_ws/install/include/")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/install/include" TYPE DIRECTORY FILES "/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_frontend/include/" FILES_MATCHING REGEX "/[^/]*\\.hpp$")
 endif()
 

@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -71,6 +71,22 @@ ros::message_operations::Printer< ::devices::SliderSetting_<ContainerAllocator> 
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::devices::SliderSetting_<ContainerAllocator1> & lhs, const ::devices::SliderSetting_<ContainerAllocator2> & rhs)
+{
+  return lhs.P_gain == rhs.P_gain &&
+    lhs.I_gain == rhs.I_gain &&
+    lhs.D_gain == rhs.D_gain;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::devices::SliderSetting_<ContainerAllocator1> & lhs, const ::devices::SliderSetting_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace devices
 
 namespace ros
@@ -80,23 +96,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'devices': ['/home/nguyen/vio_ws/src/driver/devices/slider/msg', '/home/nguyen/vio_ws/src/driver/devices/span/msg', '/home/nguyen/vio_ws/src/driver/devices/wheel/msg', '/home/nguyen/vio_ws/src/driver/devices/gps/msg']}
 
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
-
-
-
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::SliderSetting_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::SliderSetting_<ContainerAllocator> const>
-  : TrueType
-  { };
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::SliderSetting_<ContainerAllocator> >
@@ -105,6 +105,16 @@ struct IsMessage< ::devices::SliderSetting_<ContainerAllocator> >
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::SliderSetting_<ContainerAllocator> const>
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::SliderSetting_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::SliderSetting_<ContainerAllocator> const>
   : TrueType
   { };
 
@@ -148,13 +158,13 @@ struct Definition< ::devices::SliderSetting_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "### Message type for live configurate the slider\n\
-\n\
-# PID Controller parameters\n\
-float64 P_gain\n\
-float64 I_gain\n\
-float64 D_gain\n\
-";
+    return "### Message type for live configurate the slider\n"
+"\n"
+"# PID Controller parameters\n"
+"float64 P_gain\n"
+"float64 I_gain\n"
+"float64 D_gain\n"
+;
   }
 
   static const char* value(const ::devices::SliderSetting_<ContainerAllocator>&) { return value(); }

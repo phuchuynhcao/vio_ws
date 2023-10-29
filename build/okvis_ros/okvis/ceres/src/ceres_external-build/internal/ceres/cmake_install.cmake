@@ -1,8 +1,8 @@
-# Install script for directory: /home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external/internal/ceres
+# Install script for directory: /home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external/internal/ceres
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/nguyen/vio_ws/build")
+  set(CMAKE_INSTALL_PREFIX "/home/phuccao/OKVIS/vio_ws/build")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,7 +32,12 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/lib/libceres.a")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/lib/libceres.a")
 endif()
 

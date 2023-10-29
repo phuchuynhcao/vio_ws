@@ -6,7 +6,7 @@
  
 # Compute paths
 get_filename_component(BRISK_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-set(BRISK_INCLUDE_DIRS "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/include;/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/include;/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build")
+set(BRISK_INCLUDE_DIRS "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/include;/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/include;/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build")
  
 # Our library dependencies (contains definitions for IMPORTED targets)
 if(NOT TARGET brisk AND NOT BRISK_BINARY_DIR)

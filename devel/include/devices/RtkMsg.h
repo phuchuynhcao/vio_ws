@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -39,7 +39,7 @@ struct RtkMsg_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _raw_string_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _raw_string_type;
   _raw_string_type raw_string;
 
 
@@ -67,6 +67,21 @@ ros::message_operations::Printer< ::devices::RtkMsg_<ContainerAllocator> >::stre
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::devices::RtkMsg_<ContainerAllocator1> & lhs, const ::devices::RtkMsg_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.raw_string == rhs.raw_string;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::devices::RtkMsg_<ContainerAllocator1> & lhs, const ::devices::RtkMsg_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace devices
 
 namespace ros
@@ -76,23 +91,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'devices': ['/home/nguyen/vio_ws/src/driver/devices/slider/msg', '/home/nguyen/vio_ws/src/driver/devices/span/msg', '/home/nguyen/vio_ws/src/driver/devices/wheel/msg', '/home/nguyen/vio_ws/src/driver/devices/gps/msg']}
 
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
-
-
-
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::RtkMsg_<ContainerAllocator> >
-  : FalseType
-  { };
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::RtkMsg_<ContainerAllocator> const>
-  : FalseType
-  { };
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::RtkMsg_<ContainerAllocator> >
@@ -102,6 +101,16 @@ struct IsMessage< ::devices::RtkMsg_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsMessage< ::devices::RtkMsg_<ContainerAllocator> const>
   : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::RtkMsg_<ContainerAllocator> >
+  : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::RtkMsg_<ContainerAllocator> const>
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -144,36 +153,34 @@ struct Definition< ::devices::RtkMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Message of navigation information read from the SPAN-CPT system (log INSPVAX)\n\
-\n\
-# Hedaer of this ros message\n\
-# header.seq        : consecutive increasing ID\n\
-# header.stamp      : timestamp of the message\n\
-#   .sec            : seconds\n\
-#   .nsec           : nanoseconds\n\
-# header.frame_id   : name of this data\n\
-Header header\n\
-\n\
-# Raw string recorded from RTK rover\n\
-string raw_string\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "# Message of navigation information read from the SPAN-CPT system (log INSPVAX)\n"
+"\n"
+"# Hedaer of this ros message\n"
+"# header.seq        : consecutive increasing ID\n"
+"# header.stamp      : timestamp of the message\n"
+"#   .sec            : seconds\n"
+"#   .nsec           : nanoseconds\n"
+"# header.frame_id   : name of this data\n"
+"Header header\n"
+"\n"
+"# Raw string recorded from RTK rover\n"
+"string raw_string\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::devices::RtkMsg_<ContainerAllocator>&) { return value(); }
@@ -215,7 +222,7 @@ struct Printer< ::devices::RtkMsg_<ContainerAllocator> >
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "raw_string: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.raw_string);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.raw_string);
   }
 };
 

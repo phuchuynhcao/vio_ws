@@ -1,8 +1,8 @@
-# Install script for directory: /home/nguyen/vio_ws/src/okvis_ros
+# Install script for directory: /home/phuccao/OKVIS/vio_ws/src/okvis_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/nguyen/vio_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/phuccao/OKVIS/vio_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,40 +32,45 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/okvis_ros" TYPE FILE FILES "/home/nguyen/vio_ws/devel/include/okvis_ros/CameraConfig.h")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/okvis_ros" TYPE FILE FILES "/home/nguyen/vio_ws/devel/lib/python2.7/dist-packages/okvis_ros/__init__.py")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/okvis_ros" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/devel/include/okvis_ros/CameraConfig.h")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/nguyen/vio_ws/devel/lib/python2.7/dist-packages/okvis_ros/cfg")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/okvis_ros" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/devel/lib/python3/dist-packages/okvis_ros/__init__.py")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/okvis_ros" TYPE DIRECTORY FILES "/home/nguyen/vio_ws/devel/lib/python2.7/dist-packages/okvis_ros/cfg")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/phuccao/OKVIS/vio_ws/devel/lib/python3/dist-packages/okvis_ros/cfg")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nguyen/vio_ws/build/okvis_ros/catkin_generated/installspace/okvis_ros.pc")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/okvis_ros" TYPE DIRECTORY FILES "/home/phuccao/OKVIS/vio_ws/devel/lib/python3/dist-packages/okvis_ros/cfg")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/catkin_generated/installspace/okvis_ros.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/okvis_ros/cmake" TYPE FILE FILES
-    "/home/nguyen/vio_ws/build/okvis_ros/catkin_generated/installspace/okvis_rosConfig.cmake"
-    "/home/nguyen/vio_ws/build/okvis_ros/catkin_generated/installspace/okvis_rosConfig-version.cmake"
+    "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/catkin_generated/installspace/okvis_rosConfig.cmake"
+    "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/catkin_generated/installspace/okvis_rosConfig-version.cmake"
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/okvis_ros" TYPE FILE FILES "/home/nguyen/vio_ws/src/okvis_ros/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/okvis_ros" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/src/okvis_ros/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/nguyen/vio_ws/build/okvis_ros/okvis/cmake_install.cmake")
+  include("/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/cmake_install.cmake")
 
 endif()
 

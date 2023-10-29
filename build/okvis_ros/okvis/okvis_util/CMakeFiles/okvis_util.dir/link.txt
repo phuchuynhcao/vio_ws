@@ -1,2 +1,2 @@
-/usr/bin/ar qc /home/nguyen/vio_ws/devel/lib/libokvis_util.a  CMakeFiles/okvis_util.dir/src/dependency-tracker.cc.o
-/usr/bin/ranlib /home/nguyen/vio_ws/devel/lib/libokvis_util.a
+/usr/bin/ar qc /home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_util.a  CMakeFiles/okvis_util.dir/src/dependency-tracker.cc.o
+/usr/bin/ranlib /home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_util.a

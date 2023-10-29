@@ -68,7 +68,26 @@
 			"random": "cpp",
 			"core": "cpp",
 			"*.txx": "cpp",
-			"string": "cpp"
-		}
+			"string": "cpp",
+			"condition_variable": "cpp",
+			"iterator": "cpp",
+			"map": "cpp",
+			"memory_resource": "cpp",
+			"optional": "cpp",
+			"set": "cpp",
+			"string_view": "cpp",
+			"mutex": "cpp",
+			"shared_mutex": "cpp",
+			"future": "cpp",
+			"valarray": "cpp",
+			"variant": "cpp",
+			"bit": "cpp",
+			"alignedvector3": "cpp"
+		},
+		"python.analysis.extraPaths": [
+			"/home/phuccao/OKVIS/vio_ws/devel/lib/python3/dist-packages",
+			"/home/phuccao/catkin_ws_FASTLIO_realtime/devel/lib/python3/dist-packages",
+			"/opt/ros/noetic/lib/python3/dist-packages"
+		]
 	}
 }

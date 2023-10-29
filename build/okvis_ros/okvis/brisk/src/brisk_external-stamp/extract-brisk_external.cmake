@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk-2.0.3.zip" ABSOLUTE)
-get_filename_component(directory "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external" ABSOLUTE)
+get_filename_component(filename "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk-2.0.3.zip" ABSOLUTE)
+get_filename_component(directory "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'
@@ -37,6 +37,7 @@ endif()
 #
 message(STATUS "extracting... [analysis]")
 file(GLOB contents "${ut_dir}/*")
+list(REMOVE_ITEM contents "${ut_dir}/.DS_Store")
 list(LENGTH contents n)
 if(NOT n EQUAL 1 OR NOT IS_DIRECTORY "${contents}")
   set(contents "${ut_dir}")

@@ -13,4 +13,4 @@ if(NOT TARGET opengv AND NOT OPENGV_BINARY_DIR)
 endif()
 
 set(OPENGV_LIBRARIES opengv)
-set(OPENGV_INCLUDE_DIRS "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv/include;/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build")
+set(OPENGV_INCLUDE_DIRS "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv/include;/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build")

@@ -67,14 +67,14 @@ set(camera1394stereo_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(camera1394stereo_SOURCE_PREFIX /home/nguyen/vio_ws/src/driver/camera1394stereo)
-  set(camera1394stereo_DEVEL_PREFIX /home/nguyen/vio_ws/devel)
+  set(camera1394stereo_SOURCE_PREFIX /home/phuccao/OKVIS/vio_ws/src/driver/camera1394stereo)
+  set(camera1394stereo_DEVEL_PREFIX /home/phuccao/OKVIS/vio_ws/devel)
   set(camera1394stereo_INSTALL_PREFIX "")
   set(camera1394stereo_PREFIX ${camera1394stereo_DEVEL_PREFIX})
 else()
   set(camera1394stereo_SOURCE_PREFIX "")
   set(camera1394stereo_DEVEL_PREFIX "")
-  set(camera1394stereo_INSTALL_PREFIX /home/nguyen/vio_ws/install)
+  set(camera1394stereo_INSTALL_PREFIX /home/phuccao/OKVIS/vio_ws/install)
   set(camera1394stereo_PREFIX ${camera1394stereo_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/nguyen/vio_ws/install/lib;/home/nguyen/vio_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/phuccao/OKVIS/vio_ws/install/lib;/home/phuccao/OKVIS/vio_ws/devel/lib;/home/phuccao/catkin_ws_FASTLIO_realtime/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(camera1394stereo_LIBRARIES ${camera1394stereo_LIBRARIES})
 
   _list_append_unique(camera1394stereo_LIBRARY_DIRS ${${camera1394stereo_dep}_LIBRARY_DIRS})
-  list(APPEND camera1394stereo_EXPORTED_TARGETS ${${camera1394stereo_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(camera1394stereo_EXPORTED_TARGETS ${${camera1394stereo_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

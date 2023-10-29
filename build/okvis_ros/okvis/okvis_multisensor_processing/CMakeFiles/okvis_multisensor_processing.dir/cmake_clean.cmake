@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/okvis_multisensor_processing.dir/src/ThreadedKFVio.cpp.o"
-  "CMakeFiles/okvis_multisensor_processing.dir/src/ImuFrameSynchronizer.cpp.o"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_multisensor_processing.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_multisensor_processing.pdb"
   "CMakeFiles/okvis_multisensor_processing.dir/src/FrameSynchronizer.cpp.o"
+  "CMakeFiles/okvis_multisensor_processing.dir/src/ImuFrameSynchronizer.cpp.o"
+  "CMakeFiles/okvis_multisensor_processing.dir/src/ThreadedKFVio.cpp.o"
   "CMakeFiles/okvis_multisensor_processing.dir/src/VioVisualizer.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_multisensor_processing.pdb"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_multisensor_processing.a"
 )
 
 # Per-language clean rules from dependency scanning.

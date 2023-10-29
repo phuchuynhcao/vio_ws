@@ -546,12 +546,42 @@ void Publisher::publishFullStateAsCallback(
     const Eigen::Matrix<double, 9, 1> & speedAndBiases,
     const Eigen::Matrix<double, 3, 1> & omega_S)
 {
+  static int counter_path_pub = 0;
+  counter_path_pub++; 
   setTime(t);
   setOdometry(T_WS, speedAndBiases, omega_S);  // TODO: provide setters for this hack
-  setPath(T_WS);
+  if (counter_path_pub % 10 == 0)
+    setPath(T_WS);
   publishOdometry();
   publishTransform();
-  publishPath();    
+  if (counter_path_pub % 10 == 0)
+    publishPath(); 
+
+  // if ((_t - lastOdometryCsvTime_).toSec() < 1.0 / parameters_.publishing.publishRate)
+  //   return;  // control the publish rate
+  // if (csvFile_) {
+  //   //LOG(INFO)<<"filePtr: ok; ";
+  //   if (csvFile_->good()) {
+  //     //LOG(INFO)<<"file: good.";
+  //     Eigen::Vector3d p_WS_W = T_WS.r();
+  //     Eigen::Quaterniond q_WS = T_WS.q();
+  //     std::stringstream time;
+  //     time << t.sec << std::setw(9) << std::setfill('0') << t.nsec;
+  //     *csvFile_ << time.str() << ", " << std::scientific
+  //         << std::setprecision(18) << p_WS_W[0] << ", " << p_WS_W[1] << ", "
+  //         << p_WS_W[2] << ", " << q_WS.x() << ", " << q_WS.y() << ", "
+  //         << q_WS.z() << ", " << q_WS.w() << ", " << speedAndBiases[0] << ", "
+  //         << speedAndBiases[1] << ", " << speedAndBiases[2] << ", "
+  //         << speedAndBiases[3] << ", " << speedAndBiases[4] << ", "
+  //         << speedAndBiases[5] << ", " << speedAndBiases[6] << ", "
+  //         << speedAndBiases[7] << ", " << speedAndBiases[8]
+  //         << ", " << omega_S[0] << ", " << omega_S[1] << ", " << omega_S[2]
+  //         << ", " << 0 << ", " << 0 << ", " << 0 
+  //         << ", " << 0 << ", " << 0 << ", " << 0
+  //         << std::endl;
+  //   }
+  // }
+  // lastOdometryCsvTime_ = _t;  // remember
 }
 
 // Set and write full state to CSV file.
@@ -736,12 +766,12 @@ void Publisher::setImages(const std::vector<cv::Mat> & images)
 // maximum is reached, the last pose is copied in a new path message. The rest are deleted.
 void Publisher::setPath(const okvis::kinematics::Transformation &T_WS)
 {
-  if (path_.poses.size() >= parameters_.publishing.maxPathLength) {
-    geometry_msgs::PoseStamped lastPose = path_.poses.back();
-    path_.poses.clear();
-    path_.poses.reserve(parameters_.publishing.maxPathLength);
-    path_.poses.push_back(lastPose);
-  }
+  // if (path_.poses.size() >= parameters_.publishing.maxPathLength) {
+  //   geometry_msgs::PoseStamped lastPose = path_.poses.back();
+  //   path_.poses.clear();
+  //   path_.poses.reserve(parameters_.publishing.maxPathLength);
+  //   path_.poses.push_back(lastPose);
+  // }
   geometry_msgs::PoseStamped pose;
   pose.header.stamp = _t;
   pose.header.frame_id = "world";

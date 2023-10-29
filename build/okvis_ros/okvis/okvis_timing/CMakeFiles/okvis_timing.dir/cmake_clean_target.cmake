@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "/home/nguyen/vio_ws/devel/lib/libokvis_timing.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_timing.a"
 )

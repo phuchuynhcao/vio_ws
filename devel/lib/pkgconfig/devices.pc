@@ -1,8 +1,8 @@
-prefix=/home/nguyen/vio_ws/devel
+prefix=/home/phuccao/OKVIS/vio_ws/devel
 
 Name: devices
 Description: Description of devices
 Version: 1.2.1
-Cflags: -I/home/nguyen/vio_ws/devel/include -I/home/nguyen/vio_ws/src/driver/devices/serial/include
+Cflags: -I/home/phuccao/OKVIS/vio_ws/devel/include -I/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include
 Libs: -L${prefix}/lib -ldevices -lrt -lpthread
 Requires: message_runtime

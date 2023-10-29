@@ -4,32 +4,31 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast5-8-nms.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast5-8-nms.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast5-8.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast5-8.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12d-nms.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12d-nms.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12d.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12d.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12s-nms.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12s-nms.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12s.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12s.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/ast-detector.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/ast-detector.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/non-maximum-suppression.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/non-maximum-suppression.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/oast9-16-nms.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/oast9-16-nms.cc.o"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/oast9-16.cc" "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/oast9-16.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast5-8-nms.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast5-8-nms.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast5-8.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast5-8.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12d-nms.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12d-nms.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12d.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12d.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12s-nms.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12s-nms.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/agast7-12s.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/agast7-12s.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/ast-detector.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/ast-detector.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/non-maximum-suppression.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/non-maximum-suppression.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/oast9-16-nms.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/oast9-16-nms.cc.o"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/src/oast9-16.cc" "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/CMakeFiles/agast.dir/src/oast9-16.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "AGAST_GLOG"
-  "BRISK_IMAGE_PATH=\"/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/images\""
+  "BRISK_IMAGE_PATH=\"/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/images\""
   "HAVE_OPENCV"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
-  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/include"
-  "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/include"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/agast/include"
+  "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/include"
+  "/usr/include/opencv4"
   )
 
 # Targets to which this target links.

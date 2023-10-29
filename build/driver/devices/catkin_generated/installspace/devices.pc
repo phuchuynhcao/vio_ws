@@ -1,4 +1,4 @@
-prefix=/home/nguyen/vio_ws/install
+prefix=/home/phuccao/OKVIS/vio_ws/install
 
 Name: devices
 Description: Description of devices

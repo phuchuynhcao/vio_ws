@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(okvis_ros)
 
+ADD_COMPILE_OPTIONS(-std=c++14 )
+
 find_package(catkin REQUIRED  
   pcl_conversions
   pcl_ros

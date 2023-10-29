@@ -1,13 +1,13 @@
 # Target labels
  brisk_external
 # Source files and their labels
-/home/nguyen/vio_ws/build/okvis_ros/okvis/CMakeFiles/brisk_external
-/home/nguyen/vio_ws/build/okvis_ros/okvis/CMakeFiles/brisk_external.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/CMakeFiles/brisk_external-complete.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-install.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-mkdir.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-download.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-update.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-patch.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-configure.rule
-/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-build.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/CMakeFiles/brisk_external
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/CMakeFiles/brisk_external.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/CMakeFiles/brisk_external-complete.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-install.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-mkdir.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-download.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-update.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-patch.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-configure.rule
+/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-stamp/brisk_external-build.rule

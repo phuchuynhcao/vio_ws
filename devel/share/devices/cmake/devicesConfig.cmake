@@ -67,14 +67,14 @@ set(devices_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(devices_SOURCE_PREFIX /home/nguyen/vio_ws/src/driver/devices)
-  set(devices_DEVEL_PREFIX /home/nguyen/vio_ws/devel)
+  set(devices_SOURCE_PREFIX /home/phuccao/OKVIS/vio_ws/src/driver/devices)
+  set(devices_DEVEL_PREFIX /home/phuccao/OKVIS/vio_ws/devel)
   set(devices_INSTALL_PREFIX "")
   set(devices_PREFIX ${devices_DEVEL_PREFIX})
 else()
   set(devices_SOURCE_PREFIX "")
   set(devices_DEVEL_PREFIX "")
-  set(devices_INSTALL_PREFIX /home/nguyen/vio_ws/install)
+  set(devices_INSTALL_PREFIX /home/phuccao/OKVIS/vio_ws/install)
   set(devices_PREFIX ${devices_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(devices_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/nguyen/vio_ws/devel/include;/home/nguyen/vio_ws/src/driver/devices/serial/include " STREQUAL " ")
+if(NOT "/home/phuccao/OKVIS/vio_ws/devel/include;/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include " STREQUAL " ")
   set(devices_INCLUDE_DIRS "")
-  set(_include_dirs "/home/nguyen/vio_ws/devel/include;/home/nguyen/vio_ws/src/driver/devices/serial/include")
+  set(_include_dirs "/home/phuccao/OKVIS/vio_ws/devel/include;/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/nguyen/vio_ws/devel/include;/home/nguyen/vio_ws/src/driver/devices
         message(FATAL_ERROR "Project 'devices' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'devices' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/nguyen/vio_ws/src/driver/devices/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'devices' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/phuccao/OKVIS/vio_ws/src/driver/devices/${idir}'.  ${_report}")
     endif()
     _list_append_unique(devices_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/nguyen/vio_ws/devel/lib;/home/nguyen/vio_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/phuccao/OKVIS/vio_ws/devel/lib;/home/phuccao/OKVIS/vio_ws/devel/lib;/home/phuccao/catkin_ws_FASTLIO_realtime/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(devices_LIBRARIES ${devices_LIBRARIES})
 
   _list_append_unique(devices_LIBRARY_DIRS ${${devices_dep}_LIBRARY_DIRS})
-  list(APPEND devices_EXPORTED_TARGETS ${${devices_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(devices_EXPORTED_TARGETS ${${devices_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "devices-msg-extras.cmake")

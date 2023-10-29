@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/okvis_frontend.dir/src/Frontend.cpp.o"
-  "CMakeFiles/okvis_frontend.dir/src/VioKeyframeWindowMatchingAlgorithm.cpp.o"
-  "CMakeFiles/okvis_frontend.dir/src/stereo_triangulation.cpp.o"
-  "CMakeFiles/okvis_frontend.dir/src/ProbabilisticStereoTriangulator.cpp.o"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_frontend.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_frontend.pdb"
   "CMakeFiles/okvis_frontend.dir/src/FrameNoncentralAbsoluteAdapter.cpp.o"
   "CMakeFiles/okvis_frontend.dir/src/FrameRelativeAdapter.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_frontend.pdb"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_frontend.a"
+  "CMakeFiles/okvis_frontend.dir/src/Frontend.cpp.o"
+  "CMakeFiles/okvis_frontend.dir/src/ProbabilisticStereoTriangulator.cpp.o"
+  "CMakeFiles/okvis_frontend.dir/src/VioKeyframeWindowMatchingAlgorithm.cpp.o"
+  "CMakeFiles/okvis_frontend.dir/src/stereo_triangulation.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

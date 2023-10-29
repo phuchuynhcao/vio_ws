@@ -1,33 +1,24 @@
-if("cc32b16281aa6eab67cb28a61cf87a2a5c2b0961" STREQUAL "")
-  message(FATAL_ERROR "Tag for git checkout should not be empty.")
-endif()
 
-set(run 0)
-
-if("/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitinfo.txt" IS_NEWER_THAN "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt")
-  set(run 1)
-endif()
-
-if(NOT run)
-  message(STATUS "Avoiding repeated git clone, stamp file is up to date: '/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt'")
+if(NOT "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitinfo.txt" IS_NEWER_THAN "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt")
+  message(STATUS "Avoiding repeated git clone, stamp file is up to date: '/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt'")
   return()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E remove_directory "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
+  COMMAND ${CMAKE_COMMAND} -E remove_directory "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: '/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv'")
+  message(FATAL_ERROR "Failed to remove directory: '/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv'")
 endif()
 
-# try the clone 3 times incase there is an odd git clone issue
+# try the clone 3 times in case there is an odd git clone issue
 set(error_code 1)
 set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
-    COMMAND "/usr/bin/git" clone --origin "origin" "https://github.com/laurentkneip/opengv" "opengv"
-    WORKING_DIRECTORY "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src"
+    COMMAND "/usr/bin/git"  clone --no-checkout "https://github.com/laurentkneip/opengv" "opengv"
+    WORKING_DIRECTORY "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src"
     RESULT_VARIABLE error_code
     )
   math(EXPR number_of_tries "${number_of_tries} + 1")
@@ -41,42 +32,35 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "/usr/bin/git" checkout cc32b16281aa6eab67cb28a61cf87a2a5c2b0961
-  WORKING_DIRECTORY "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
+  COMMAND "/usr/bin/git"  checkout cc32b16281aa6eab67cb28a61cf87a2a5c2b0961 --
+  WORKING_DIRECTORY "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
   RESULT_VARIABLE error_code
   )
 if(error_code)
   message(FATAL_ERROR "Failed to checkout tag: 'cc32b16281aa6eab67cb28a61cf87a2a5c2b0961'")
 endif()
 
-execute_process(
-  COMMAND "/usr/bin/git" submodule init 
-  WORKING_DIRECTORY "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
-  RESULT_VARIABLE error_code
-  )
-if(error_code)
-  message(FATAL_ERROR "Failed to init submodules in: '/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv'")
+set(init_submodules TRUE)
+if(init_submodules)
+  execute_process(
+    COMMAND "/usr/bin/git"  submodule update --recursive --init 
+    WORKING_DIRECTORY "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
+    RESULT_VARIABLE error_code
+    )
 endif()
-
-execute_process(
-  COMMAND "/usr/bin/git" submodule update --recursive 
-  WORKING_DIRECTORY "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
-  RESULT_VARIABLE error_code
-  )
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: '/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv'")
+  message(FATAL_ERROR "Failed to update submodules in: '/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
   COMMAND ${CMAKE_COMMAND} -E copy
-    "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitinfo.txt"
-    "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt"
-  WORKING_DIRECTORY "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv"
+    "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitinfo.txt"
+    "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-stamp/opengv_external-gitclone-lastrun.txt'")
 endif()
 

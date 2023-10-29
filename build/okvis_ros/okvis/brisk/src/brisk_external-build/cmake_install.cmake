@@ -1,8 +1,8 @@
-# Install script for directory: /home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external
+# Install script for directory: /home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/nguyen/vio_ws/build")
+  set(CMAKE_INSTALL_PREFIX "/home/phuccao/OKVIS/vio_ws/build")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,111 +32,112 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/lib/libbrisk.a")
+   "/home/phuccao/OKVIS/vio_ws/build/lib/libbrisk.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib" TYPE STATIC_LIBRARY FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/lib/libbrisk.a")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib" TYPE STATIC_LIBRARY FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/lib/libbrisk.a")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/bin/demo" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/bin/demo")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo"
+         FILE "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/bin/demo"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/bin/demo")
+   "/home/phuccao/OKVIS/vio_ws/build/bin/demo")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/bin" TYPE EXECUTABLE FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/bin/demo")
-  if(EXISTS "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo"
-         OLD_RPATH "/opt/ros/kinetic/lib/x86_64-linux-gnu:"
-         NEW_RPATH "")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/bin" TYPE EXECUTABLE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/bin/demo")
+  if(EXISTS "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/bin/demo" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/bin/demo")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/nguyen/vio_ws/build/bin/demo")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/bin/demo")
     endif()
   endif()
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "dev")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/include/")
+   "/home/phuccao/OKVIS/vio_ws/build/include/")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/include" TYPE DIRECTORY FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/include/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/include" TYPE DIRECTORY FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external/include/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/lib/CMake/brisk/briskConfig.cmake;/home/nguyen/vio_ws/build/lib/CMake/brisk/briskConfigVersion.cmake")
+   "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskConfig.cmake;/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskConfigVersion.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib/CMake/brisk" TYPE FILE FILES
-    "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/briskConfig.cmake"
-    "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/briskConfigVersion.cmake"
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk" TYPE FILE FILES
+    "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/briskConfig.cmake"
+    "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/briskConfigVersion.cmake"
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
-         "$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets.cmake"
-         "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/Export/_home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
+         "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets.cmake"
+         "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/Export/_home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
     if(EXPORT_FILE_CHANGED)
-      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets-*.cmake")
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets-*.cmake")
       if(OLD_CONFIG_FILES)
-        message(STATUS "Old export file \"$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        message(STATUS "Old export file \"$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
         file(REMOVE ${OLD_CONFIG_FILES})
       endif()
     endif()
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
+   "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib/CMake/brisk" TYPE FILE FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/Export/_home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/Export/_home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "/home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets-release.cmake")
+     "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets-release.cmake")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib/CMake/brisk" TYPE FILE FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/Export/_home/nguyen/vio_ws/build/lib/CMake/brisk/briskTargets-release.cmake")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/CMakeFiles/Export/_home/phuccao/OKVIS/vio_ws/build/lib/CMake/brisk/briskTargets-release.cmake")
   endif()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/cmake_install.cmake")
+  include("/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/agast/cmake_install.cmake")
 
 endif()
 
@@ -148,5 +149,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/nguyen/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/brisk/src/brisk_external-build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

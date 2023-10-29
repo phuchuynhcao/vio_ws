@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lcamera1394stereo".split(';') if "-lcamera1394stereo" != "" else []
 PROJECT_NAME = "camera1394stereo"
-PROJECT_SPACE_DIR = "/home/nguyen/vio_ws/install"
+PROJECT_SPACE_DIR = "/home/phuccao/OKVIS/vio_ws/install"
 PROJECT_VERSION = "1.0.6"

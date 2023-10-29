@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -39,7 +39,7 @@ struct SpanNav_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _raw_string_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _raw_string_type;
   _raw_string_type raw_string;
 
 
@@ -67,6 +67,21 @@ ros::message_operations::Printer< ::devices::SpanNav_<ContainerAllocator> >::str
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::devices::SpanNav_<ContainerAllocator1> & lhs, const ::devices::SpanNav_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.raw_string == rhs.raw_string;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::devices::SpanNav_<ContainerAllocator1> & lhs, const ::devices::SpanNav_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace devices
 
 namespace ros
@@ -76,23 +91,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'devices': ['/home/nguyen/vio_ws/src/driver/devices/slider/msg', '/home/nguyen/vio_ws/src/driver/devices/span/msg', '/home/nguyen/vio_ws/src/driver/devices/wheel/msg', '/home/nguyen/vio_ws/src/driver/devices/gps/msg']}
 
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
-
-
-
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::SpanNav_<ContainerAllocator> >
-  : FalseType
-  { };
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::SpanNav_<ContainerAllocator> const>
-  : FalseType
-  { };
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::SpanNav_<ContainerAllocator> >
@@ -102,6 +101,16 @@ struct IsMessage< ::devices::SpanNav_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsMessage< ::devices::SpanNav_<ContainerAllocator> const>
   : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::SpanNav_<ContainerAllocator> >
+  : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::SpanNav_<ContainerAllocator> const>
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -144,71 +153,69 @@ struct Definition< ::devices::SpanNav_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Message of navigation information read from the SPAN-CPT system (log INSPVAX)\n\
-\n\
-# Hedaer of this ros message\n\
-# header.seq        : consecutive increasing ID\n\
-# header.stamp      : timestamp of the message\n\
-#   .sec            : seconds\n\
-#   .nsec           : nanoseconds\n\
-# header.frame_id   : name of this data\n\
-Header header\n\
-\n\
-# # Headar of the SPAN message\n\
-# SpanHeader span_header\n\
-\n\
-# string ins_status           # Inertial Solution Status (string)\n\
-# string pos_type             # Position or Velocity Type (string)\n\
-\n\
-# float64 latitude            # Latitude [degree]\n\
-# float64 longtitude          # Longtitude [degree] \n\
-# float64 height              # Orthometric height [m]\n\
-# float32 undulation          # Geoid undulation [m]\n\
-\n\
-# float64 vel_north           # North velocity [m/s]\n\
-# float64 vel_east            # East velocity [m/s]\n\
-# float64 vel_up              # Up velocity [m/s]\n\
-\n\
-# float64 roll                # Rotation angle around Y axis of IMU frame, positive in counter-clockwise [degree]\n\
-# float64 pitch               # Rotation angle around X axis of IMU frame, positive in counter-clockwise [degree]\n\
-# float64 azimuth             # Rotation angle around Z axis of IMU frame, positive in clockwise [degree]\n\
-#                             # The total rotation sequence is (-Z)XY\n\
-\n\
-# float32 sigma_lat           # Standard deviation of latitude [m]\n\
-# float32 sigma_long          # Standard deviation of longtitude [m]\n\
-# float32 sigma_height        # Standard deviation of height [m]\n\
-\n\
-# float32 sigma_vel_north     # Standard deviation of north velocity [m/s]\n\
-# float32 sigma_vel_east      # Standard deviation of east velocity [m/s]\n\
-# float32 sigma_vel_up        # Standard deviation of up velocity [m/s]\n\
-\n\
-# float32 sigma_roll          # Standard deviation of roll [degree]\n\
-# float32 sigma_pitch         # Standard deviation of pitch [degree]\n\
-# float32 sigma_azimuth       # Standard deviation of azimuth [degree]\n\
-\n\
-# string ext_sol_stat         # Extended solution status (4-byte hex number)\n\
-# uint16 time_since_update    # Elapsed time since the last ZUPT or position update [second]\n\
-\n\
-# Raw string with time included\n\
-string raw_string\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "# Message of navigation information read from the SPAN-CPT system (log INSPVAX)\n"
+"\n"
+"# Hedaer of this ros message\n"
+"# header.seq        : consecutive increasing ID\n"
+"# header.stamp      : timestamp of the message\n"
+"#   .sec            : seconds\n"
+"#   .nsec           : nanoseconds\n"
+"# header.frame_id   : name of this data\n"
+"Header header\n"
+"\n"
+"# # Headar of the SPAN message\n"
+"# SpanHeader span_header\n"
+"\n"
+"# string ins_status           # Inertial Solution Status (string)\n"
+"# string pos_type             # Position or Velocity Type (string)\n"
+"\n"
+"# float64 latitude            # Latitude [degree]\n"
+"# float64 longtitude          # Longtitude [degree] \n"
+"# float64 height              # Orthometric height [m]\n"
+"# float32 undulation          # Geoid undulation [m]\n"
+"\n"
+"# float64 vel_north           # North velocity [m/s]\n"
+"# float64 vel_east            # East velocity [m/s]\n"
+"# float64 vel_up              # Up velocity [m/s]\n"
+"\n"
+"# float64 roll                # Rotation angle around Y axis of IMU frame, positive in counter-clockwise [degree]\n"
+"# float64 pitch               # Rotation angle around X axis of IMU frame, positive in counter-clockwise [degree]\n"
+"# float64 azimuth             # Rotation angle around Z axis of IMU frame, positive in clockwise [degree]\n"
+"#                             # The total rotation sequence is (-Z)XY\n"
+"\n"
+"# float32 sigma_lat           # Standard deviation of latitude [m]\n"
+"# float32 sigma_long          # Standard deviation of longtitude [m]\n"
+"# float32 sigma_height        # Standard deviation of height [m]\n"
+"\n"
+"# float32 sigma_vel_north     # Standard deviation of north velocity [m/s]\n"
+"# float32 sigma_vel_east      # Standard deviation of east velocity [m/s]\n"
+"# float32 sigma_vel_up        # Standard deviation of up velocity [m/s]\n"
+"\n"
+"# float32 sigma_roll          # Standard deviation of roll [degree]\n"
+"# float32 sigma_pitch         # Standard deviation of pitch [degree]\n"
+"# float32 sigma_azimuth       # Standard deviation of azimuth [degree]\n"
+"\n"
+"# string ext_sol_stat         # Extended solution status (4-byte hex number)\n"
+"# uint16 time_since_update    # Elapsed time since the last ZUPT or position update [second]\n"
+"\n"
+"# Raw string with time included\n"
+"string raw_string\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::devices::SpanNav_<ContainerAllocator>&) { return value(); }
@@ -250,7 +257,7 @@ struct Printer< ::devices::SpanNav_<ContainerAllocator> >
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "raw_string: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.raw_string);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.raw_string);
   }
 };
 

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/DenseMatcher.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/DenseMatcher.hpp
 algorithm
 -
 memory
@@ -18,11 +18,11 @@ okvis/MatchingAlgorithm.hpp
 okvis/assert_macros.hpp
 -
 ThreadPool.hpp
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/ThreadPool.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/ThreadPool.hpp
 implementation/DenseMatcher.hpp
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/implementation/DenseMatcher.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/implementation/DenseMatcher.hpp
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/MatchingAlgorithm.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/MatchingAlgorithm.hpp
 vector
 -
 cstddef
@@ -36,7 +36,7 @@ map
 memory
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/ThreadPool.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/ThreadPool.hpp
 condition_variable
 -
 future
@@ -58,15 +58,15 @@ vector
 glog/logging.h
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/implementation/DenseMatcher.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include/okvis/implementation/DenseMatcher.hpp
 map
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/src/DenseMatcher.cpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/src/DenseMatcher.cpp
 okvis/DenseMatcher.hpp
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/src/MatchingAlgorithm.cpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/src/MatchingAlgorithm.cpp
 okvis/MatchingAlgorithm.hpp
 -
 okvis/assert_macros.hpp
@@ -74,11 +74,11 @@ okvis/assert_macros.hpp
 exception
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/src/ThreadPool.cpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/src/ThreadPool.cpp
 okvis/ThreadPool.hpp
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/assert_macros.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/assert_macros.hpp
 stdexcept
 -
 sstream
@@ -86,9 +86,9 @@ sstream
 typeinfo
 -
 okvis/source_file_pos.hpp
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/okvis/source_file_pos.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/okvis/source_file_pos.hpp
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/source_file_pos.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/source_file_pos.hpp
 string
 -
 iostream

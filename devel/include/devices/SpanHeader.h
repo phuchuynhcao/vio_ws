@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -47,16 +47,16 @@ struct SpanHeader_
 
 
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _message_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _message_type;
   _message_type message;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _port_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _port_type;
   _port_type port;
 
    typedef float _idle_time_type;
   _idle_time_type idle_time;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _gps_status_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _gps_status_type;
   _gps_status_type gps_status;
 
    typedef uint32_t _week_type;
@@ -65,7 +65,7 @@ struct SpanHeader_
    typedef double _second_type;
   _second_type second;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _receiver_status_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _receiver_status_type;
   _receiver_status_type receiver_status;
 
    typedef uint16_t _receiver_version_type;
@@ -96,6 +96,27 @@ ros::message_operations::Printer< ::devices::SpanHeader_<ContainerAllocator> >::
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::devices::SpanHeader_<ContainerAllocator1> & lhs, const ::devices::SpanHeader_<ContainerAllocator2> & rhs)
+{
+  return lhs.message == rhs.message &&
+    lhs.port == rhs.port &&
+    lhs.idle_time == rhs.idle_time &&
+    lhs.gps_status == rhs.gps_status &&
+    lhs.week == rhs.week &&
+    lhs.second == rhs.second &&
+    lhs.receiver_status == rhs.receiver_status &&
+    lhs.receiver_version == rhs.receiver_version;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::devices::SpanHeader_<ContainerAllocator1> & lhs, const ::devices::SpanHeader_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace devices
 
 namespace ros
@@ -105,23 +126,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'devices': ['/home/nguyen/vio_ws/src/driver/devices/slider/msg', '/home/nguyen/vio_ws/src/driver/devices/span/msg', '/home/nguyen/vio_ws/src/driver/devices/wheel/msg', '/home/nguyen/vio_ws/src/driver/devices/gps/msg']}
 
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
-
-
-
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::SpanHeader_<ContainerAllocator> >
-  : FalseType
-  { };
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::SpanHeader_<ContainerAllocator> const>
-  : FalseType
-  { };
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::SpanHeader_<ContainerAllocator> >
@@ -131,6 +136,16 @@ struct IsMessage< ::devices::SpanHeader_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsMessage< ::devices::SpanHeader_<ContainerAllocator> const>
   : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::SpanHeader_<ContainerAllocator> >
+  : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::SpanHeader_<ContainerAllocator> const>
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -173,20 +188,20 @@ struct Definition< ::devices::SpanHeader_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Header of information read from the SPAN-CPT system\n\
-\n\
-string message              # The name of the log or command (string)\n\
-string port                 # The name of the port where the log was generated (string)\n\
-\n\
-float32 idle_time           # The minimum percentage of time the processor is idle, between successive logs, with the same message ID [%]\n\
-string gps_status           # The quality of the GPS reference time (string)\n\
-\n\
-uint32 week                 # The GPS reference week, zero point from midnight of January 5, 1980 [week]\n\
-float64 second              # Seconds since last week [seconds]\n\
-\n\
-string receiver_status      # Status of various hardware and software components of the receiver (4-byte hex number)\n\
-uint16 receiver_version     # Reveiver software build number (0-65535)\n\
-";
+    return "# Header of information read from the SPAN-CPT system\n"
+"\n"
+"string message              # The name of the log or command (string)\n"
+"string port                 # The name of the port where the log was generated (string)\n"
+"\n"
+"float32 idle_time           # The minimum percentage of time the processor is idle, between successive logs, with the same message ID [%]\n"
+"string gps_status           # The quality of the GPS reference time (string)\n"
+"\n"
+"uint32 week                 # The GPS reference week, zero point from midnight of January 5, 1980 [week]\n"
+"float64 second              # Seconds since last week [seconds]\n"
+"\n"
+"string receiver_status      # Status of various hardware and software components of the receiver (4-byte hex number)\n"
+"uint16 receiver_version     # Reveiver software build number (0-65535)\n"
+;
   }
 
   static const char* value(const ::devices::SpanHeader_<ContainerAllocator>&) { return value(); }
@@ -231,19 +246,19 @@ struct Printer< ::devices::SpanHeader_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::devices::SpanHeader_<ContainerAllocator>& v)
   {
     s << indent << "message: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.message);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.message);
     s << indent << "port: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.port);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.port);
     s << indent << "idle_time: ";
     Printer<float>::stream(s, indent + "  ", v.idle_time);
     s << indent << "gps_status: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.gps_status);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.gps_status);
     s << indent << "week: ";
     Printer<uint32_t>::stream(s, indent + "  ", v.week);
     s << indent << "second: ";
     Printer<double>::stream(s, indent + "  ", v.second);
     s << indent << "receiver_status: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.receiver_status);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.receiver_status);
     s << indent << "receiver_version: ";
     Printer<uint16_t>::stream(s, indent + "  ", v.receiver_version);
   }

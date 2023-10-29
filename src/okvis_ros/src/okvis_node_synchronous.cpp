@@ -84,15 +84,23 @@ int main(int argc, char **argv) {
   FLAGS_stderrthreshold = 0; // INFO: 0, WARNING: 1, ERROR: 2, FATAL: 3
   FLAGS_colorlogtostderr = 1;
 
-  if (argc != 3 && argc != 4) {
+  if (argc != 3 && argc != 4 && argc != 5 && argc != 6) {
     LOG(ERROR) <<
         "Usage: ./" << argv[0] << " configuration-yaml-file bag-to-read-from [skip-first-seconds]";
     return -1;
   }
 
   okvis::Duration deltaT(0.0);
-  if (argc == 4) {
-    deltaT = okvis::Duration(atof(argv[3]));
+  if (argc == 6) {
+    deltaT = okvis::Duration(atof(argv[5]));
+  }
+  bool data_save_en = false;
+  if (argc > 3) {
+    data_save_en = (std::string(argv[3]) == "true")?true:false;
+  }
+  bool data_public_en = false;
+  if (argc > 4) {
+    data_public_en = (std::string(argv[4]) == "true")?true:false;
   }
 
   // set up the node
@@ -111,12 +119,14 @@ int main(int argc, char **argv) {
   okvis::ThreadedKFVio okvis_estimator(parameters);
 
   // Connect "signals" and "slots"
-  //okvis_estimator.setFullStateCallback(std::bind(&okvis::Publisher::publishFullStateAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4));
-  //okvis_estimator.setLandmarksCallback(std::bind(&okvis::Publisher::publishLandmarksAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
-  //okvis_estimator.setStateCallback(std::bind(&okvis::Publisher::publishStateAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2));
+  if (data_public_en)
+    okvis_estimator.setFullStateCallback(std::bind(&okvis::Publisher::publishFullStateAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4));
+  // okvis_estimator.setLandmarksCallback(std::bind(&okvis::Publisher::publishLandmarksAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
+  // okvis_estimator.setStateCallback(std::bind(&okvis::Publisher::publishStateAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2));
   //okvis_estimator.setFullStateCallback(std::bind(&okvis::Publisher::csvSaveFullStateAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4));
-  okvis_estimator.setFullStateCallback2(std::bind(&okvis::Publisher::csvSaveFullStateAsCallback2,
-                      &publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,std::placeholders::_5));
+  if (data_save_en)
+    okvis_estimator.setFullStateCallback2(std::bind(&okvis::Publisher::csvSaveFullStateAsCallback2,
+                        &publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,std::placeholders::_5));
   
   //okvis_estimator.setFullStateCallbackWithExtrinsics(std::bind(&okvis::Publisher::csvSaveFullStateWithExtrinsicsAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,std::placeholders::_5));
   //okvis_estimator.setLandmarksCallback(std::bind(&okvis::Publisher::csvSaveLandmarksAsCallback,&publisher,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
@@ -140,7 +150,8 @@ int main(int argc, char **argv) {
   std::string subname = bagname.substr(pos+1, bagname.find_last_of(".")-pos-1);
   std::string strTime = rosTimeToTimeString(ros::Time::now());
   std::cout << "submame: " << subname << std::endl;
-  publisher.setCsvFile(path + "/okvis_estimation_offline_LT_" + subname + "_" + strTime + ".csv");
+  if (data_save_en)
+    publisher.setCsvFile(path + "/okvis_estimation_offline_LT_" + subname + "_" + strTime + ".csv");
   //publisher.setLandmarksCsvFile(path + "/okvis_estimator_landmarks_" + subname + ".csv");
 
 //  okvis_estimator.setImuCsvFile(path + "/imu0_data_" + subname + ".csv");

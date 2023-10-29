@@ -1,8 +1,8 @@
-# Install script for directory: /home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv
+# Install script for directory: /home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/nguyen/vio_ws/build")
+  set(CMAKE_INSTALL_PREFIX "/home/phuccao/OKVIS/vio_ws/build")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,74 +32,79 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "lib")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/lib/libopengv.a")
+   "/home/phuccao/OKVIS/vio_ws/build/lib/libopengv.a")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib" TYPE STATIC_LIBRARY FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv/lib/libopengv.a")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib" TYPE STATIC_LIBRARY FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv/lib/libopengv.a")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "dev")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/include/")
+   "/home/phuccao/OKVIS/vio_ws/build/include/")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/include" TYPE DIRECTORY FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv/include/" FILES_MATCHING REGEX "/[^/]*\\.hpp$")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/include" TYPE DIRECTORY FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv/include/" FILES_MATCHING REGEX "/[^/]*\\.hpp$")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvConfig.cmake")
+   "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvConfig.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib/CMake/opengv" TYPE FILE FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/opengvConfig.cmake")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/opengvConfig.cmake")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
-         "$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake"
-         "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/Export/_home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
+         "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake"
+         "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/Export/_home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
     if(EXPORT_FILE_CHANGED)
-      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets-*.cmake")
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets-*.cmake")
       if(OLD_CONFIG_FILES)
-        message(STATUS "Old export file \"$ENV{DESTDIR}/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        message(STATUS "Old export file \"$ENV{DESTDIR}/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
         file(REMOVE ${OLD_CONFIG_FILES})
       endif()
     endif()
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
+   "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib/CMake/opengv" TYPE FILE FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/Export/_home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/Export/_home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-     "/home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets-release.cmake")
+     "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets-release.cmake")
     if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "/home/nguyen/vio_ws/build/lib/CMake/opengv" TYPE FILE FILES "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/Export/_home/nguyen/vio_ws/build/lib/CMake/opengv/opengvTargets-release.cmake")
+file(INSTALL DESTINATION "/home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv" TYPE FILE FILES "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/CMakeFiles/Export/_home/phuccao/OKVIS/vio_ws/build/lib/CMake/opengv/opengvTargets-release.cmake")
   endif()
 endif()
 
@@ -111,5 +116,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/nguyen/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/opengv/src/opengv_external-build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -34,12 +34,12 @@ IF (COMMAND cmake_policy)
   CMAKE_POLICY(SET CMP0007 OLD)
 ENDIF (COMMAND cmake_policy)
 
-IF (NOT EXISTS "/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt")
+IF (NOT EXISTS "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt")
   MESSAGE(FATAL_ERROR "Cannot find install manifest: "
-                      "\"/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt\"")
-ENDIF (NOT EXISTS "/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt")
+                      "\"/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt\"")
+ENDIF (NOT EXISTS "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt")
 
-FILE(READ "/home/nguyen/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt" INSTALL_MANIFEST)
+FILE(READ "/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis/ceres/src/ceres_external-build/install_manifest.txt" INSTALL_MANIFEST)
 STRING(REGEX REPLACE "\n" ";" INSTALL_MANIFEST "${INSTALL_MANIFEST}")
 LIST(REVERSE INSTALL_MANIFEST)
 

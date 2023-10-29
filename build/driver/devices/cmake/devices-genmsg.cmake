@@ -2,7 +2,7 @@
 
 message(STATUS "devices: 8 messages, 0 services")
 
-set(MSG_I_FLAGS "-Idevices:/home/nguyen/vio_ws/src/driver/devices/slider/msg;-Idevices:/home/nguyen/vio_ws/src/driver/devices/span/msg;-Idevices:/home/nguyen/vio_ws/src/driver/devices/wheel/msg;-Idevices:/home/nguyen/vio_ws/src/driver/devices/gps/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Idevices:/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg;-Idevices:/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg;-Idevices:/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg;-Idevices:/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,44 +17,44 @@ add_custom_target(devices_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" ""
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" ""
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" "std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" ""
 )
 
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
 add_custom_target(_devices_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" "std_msgs/Header:devices/GpsStatus:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "devices" "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" "std_msgs/Header:devices/GpsStatus:geometry_msgs/Vector3"
 )
 
 #
@@ -64,51 +64,51 @@ add_custom_target(_devices_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
 )
 _generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
-)
-_generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
-)
-_generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
 )
 _generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
 )
 _generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
 )
 _generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
+)
+_generate_msg_cpp(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
+)
+_generate_msg_cpp(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
 )
 _generate_msg_cpp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/devices
 )
 
@@ -126,21 +126,21 @@ add_custom_target(devices_generate_messages_cpp
 add_dependencies(devices_generate_messages devices_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_cpp _devices_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -153,51 +153,51 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS devices_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
 )
 _generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
-)
-_generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
-)
-_generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
 )
 _generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
 )
 _generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
 )
 _generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
+)
+_generate_msg_eus(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
+)
+_generate_msg_eus(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
 )
 _generate_msg_eus(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/devices
 )
 
@@ -215,21 +215,21 @@ add_custom_target(devices_generate_messages_eus
 add_dependencies(devices_generate_messages devices_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_eus _devices_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -242,51 +242,51 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS devices_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
 )
 _generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
-)
-_generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
-)
-_generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
 )
 _generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
 )
 _generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
 )
 _generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
+)
+_generate_msg_lisp(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
+)
+_generate_msg_lisp(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
 )
 _generate_msg_lisp(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/devices
 )
 
@@ -304,21 +304,21 @@ add_custom_target(devices_generate_messages_lisp
 add_dependencies(devices_generate_messages devices_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_lisp _devices_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -331,51 +331,51 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS devices_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
 )
 _generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
-)
-_generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
-)
-_generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
 )
 _generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
 )
 _generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
 )
 _generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
+)
+_generate_msg_nodejs(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
+)
+_generate_msg_nodejs(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
 )
 _generate_msg_nodejs(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/devices
 )
 
@@ -393,21 +393,21 @@ add_custom_target(devices_generate_messages_nodejs
 add_dependencies(devices_generate_messages devices_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_nodejs _devices_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -420,51 +420,51 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS devices_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
 )
 _generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
-)
-_generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
-)
-_generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
 )
 _generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
 )
 _generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
 )
 _generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
+)
+_generate_msg_py(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
+)
+_generate_msg_py(devices
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
 )
 _generate_msg_py(devices
-  "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg"
+  "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices
 )
 
@@ -482,21 +482,21 @@ add_custom_target(devices_generate_messages_py
 add_dependencies(devices_generate_messages devices_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanHeader.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/span/msg/RtkMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/slider/msg/SliderSetting.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/wheel/msg/WheelMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/span/msg/SpanNav.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsStatus.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/nguyen/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
+get_filename_component(_filename "/home/phuccao/OKVIS/vio_ws/src/driver/devices/gps/msg/GpsMsg.msg" NAME_WE)
 add_dependencies(devices_generate_messages_py _devices_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -565,7 +565,7 @@ if(TARGET geometry_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices)
-  install(CODE "execute_process(COMMAND \"/usr/bin/python2\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices\")")
+  install(CODE "execute_process(COMMAND \"/usr/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices\")")
   # install generated code
   install(
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/devices

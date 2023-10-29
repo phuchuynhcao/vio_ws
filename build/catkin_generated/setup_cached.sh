@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/nguyen/vio_ws/build"
+export PWD='/home/phuccao/OKVIS/vio_ws/build'

@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -41,7 +41,7 @@ struct GpsStatus_
 
 
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _date_type;
+   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _date_type;
   _date_type date;
 
    typedef double _time_type;
@@ -81,6 +81,24 @@ ros::message_operations::Printer< ::devices::GpsStatus_<ContainerAllocator> >::s
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::devices::GpsStatus_<ContainerAllocator1> & lhs, const ::devices::GpsStatus_<ContainerAllocator2> & rhs)
+{
+  return lhs.date == rhs.date &&
+    lhs.time == rhs.time &&
+    lhs.numsat == rhs.numsat &&
+    lhs.quality == rhs.quality &&
+    lhs.hdop == rhs.hdop;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::devices::GpsStatus_<ContainerAllocator1> & lhs, const ::devices::GpsStatus_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace devices
 
 namespace ros
@@ -90,23 +108,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'devices': ['/home/nguyen/vio_ws/src/driver/devices/slider/msg', '/home/nguyen/vio_ws/src/driver/devices/span/msg', '/home/nguyen/vio_ws/src/driver/devices/wheel/msg', '/home/nguyen/vio_ws/src/driver/devices/gps/msg']}
 
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
-
-
-
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::GpsStatus_<ContainerAllocator> >
-  : FalseType
-  { };
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::GpsStatus_<ContainerAllocator> const>
-  : FalseType
-  { };
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::GpsStatus_<ContainerAllocator> >
@@ -116,6 +118,16 @@ struct IsMessage< ::devices::GpsStatus_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsMessage< ::devices::GpsStatus_<ContainerAllocator> const>
   : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::GpsStatus_<ContainerAllocator> >
+  : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::GpsStatus_<ContainerAllocator> const>
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -158,12 +170,12 @@ struct Definition< ::devices::GpsStatus_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "string date\n\
-float64 time\n\
-int16 numsat\n\
-int16 quality\n\
-float64 hdop\n\
-";
+    return "string date\n"
+"float64 time\n"
+"int16 numsat\n"
+"int16 quality\n"
+"float64 hdop\n"
+;
   }
 
   static const char* value(const ::devices::GpsStatus_<ContainerAllocator>&) { return value(); }
@@ -205,7 +217,7 @@ struct Printer< ::devices::GpsStatus_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::devices::GpsStatus_<ContainerAllocator>& v)
   {
     s << indent << "date: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.date);
+    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.date);
     s << indent << "time: ";
     Printer<double>::stream(s, indent + "  ", v.time);
     s << indent << "numsat: ";

@@ -5,7 +5,7 @@
 #  OKVIS_EXECUTABLE   - the okvis_app_synchronous executable
 #  OKVIS_CERES_CONFIG - path to CeresConfig.cmake, to use find_package(ceres)
 
-set(OKVIS_CERES_CONFIG "/home/nguyen/vio_ws/build/share/Ceres/")
+set(OKVIS_CERES_CONFIG "/home/phuccao/OKVIS/vio_ws/build/share/Ceres/")
  
 # Compute paths
 get_filename_component(OKVIS_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)

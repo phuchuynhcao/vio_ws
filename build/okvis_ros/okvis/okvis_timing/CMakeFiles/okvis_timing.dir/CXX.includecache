@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_timing/include/okvis/timing/NsecTimeUtilities.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_timing/include/okvis/timing/NsecTimeUtilities.hpp
 chrono
 -
 boost/cstdint.hpp
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_timing/include/okvis/timing/Timer.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_timing/include/okvis/timing/Timer.hpp
 boost/date_time/posix_time/posix_time.hpp
 -
 boost/date_time/posix_time/posix_time.hpp
@@ -34,11 +34,11 @@ okvis/assert_macros.hpp
 windows.h
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_timing/src/NsecTimeUtilities.cpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_timing/src/NsecTimeUtilities.cpp
 okvis/timing/NsecTimeUtilities.hpp
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_timing/src/Timer.cpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_timing/src/Timer.cpp
 okvis/timing/Timer.hpp
 -
 okvis/assert_macros.hpp
@@ -48,7 +48,7 @@ stdio.h
 glog/logging.h
 -
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/assert_macros.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/assert_macros.hpp
 stdexcept
 -
 sstream
@@ -56,9 +56,9 @@ sstream
 typeinfo
 -
 okvis/source_file_pos.hpp
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/okvis/source_file_pos.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/okvis/source_file_pos.hpp
 
-/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/source_file_pos.hpp
+/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include/okvis/source_file_pos.hpp
 string
 -
 iostream

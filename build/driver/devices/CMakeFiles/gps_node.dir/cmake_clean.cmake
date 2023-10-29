@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gps_node.dir/gps/src/gps_node.cpp.o"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/devices/gps_node"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/devices/gps_node.pdb"
   "CMakeFiles/gps_node.dir/gps/src/GpsDriver.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/devices/gps_node.pdb"
-  "/home/nguyen/vio_ws/devel/lib/devices/gps_node"
+  "CMakeFiles/gps_node.dir/gps/src/gps_node.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

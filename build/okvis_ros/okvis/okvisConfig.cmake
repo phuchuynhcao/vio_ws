@@ -5,11 +5,11 @@
 #  OKVIS_EXECUTABLE   - the okvis_app_synchronous executable
 #  OKVIS_CERES_CONFIG - path to CeresConfig.cmake, to use find_package(ceres)
 
-set(OKVIS_CERES_CONFIG "/home/nguyen/vio_ws/build/share/Ceres/")
+set(OKVIS_CERES_CONFIG "/home/phuccao/OKVIS/vio_ws/build/share/Ceres/")
  
 # Compute paths
 get_filename_component(OKVIS_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-set(OKVIS_INCLUDE_DIRS "/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_util/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_kinematics/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_time/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_cv/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_common/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_ceres/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_timing/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_matcher/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_frontend/include;/home/nguyen/vio_ws/src/okvis_ros/okvis/okvis_multisensor_processing/include;/home/nguyen/vio_ws/build/okvis_ros/okvis")
+set(OKVIS_INCLUDE_DIRS "/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_util/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_kinematics/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_time/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_cv/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_common/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_ceres/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_timing/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_matcher/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_frontend/include;/home/phuccao/OKVIS/vio_ws/src/okvis_ros/okvis/okvis_multisensor_processing/include;/home/phuccao/OKVIS/vio_ws/build/okvis_ros/okvis")
  
 # Our library dependencies (contains definitions for IMPORTED targets)
 if(NOT TARGET okvis AND NOT OKVIS_BINARY_DIR)

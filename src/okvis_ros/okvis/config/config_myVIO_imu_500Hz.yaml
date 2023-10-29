@@ -54,12 +54,24 @@ imu_params:
     # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
 
     # ## sigma set 6 (Outdoor, low velocity, low shock, x10 noise)
-    sigma_g_c: 0.02 # gyro noise density [rad/s/sqrt(Hz)]
-    sigma_a_c: 0.05 # accelerometer noise density [m/s^2/sqrt(Hz)]
-    sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
-    sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
-    sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
-    sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+    # sigma_g_c: 0.02 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.05 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.002 # Initial gyroscope bias [rad/s]
+    # sigma_ba: 0.005 # Initial accelerometer bias [m/s^2]
+    # sigma_gw_c: 0.00002  # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.00005 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+    sigma_g_c: 12.0e-4 # gyro noise density [rad/s/sqrt(Hz)]
+    sigma_a_c: 8.0e-3 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    sigma_bg: 0.03 # gyro bias prior [rad/s]
+    sigma_ba: 0.1 # accelerometer bias prior [m/s^2]
+    sigma_gw_c: 4.0e-6 # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    sigma_aw_c: 4.0e-5 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
+    # sigma_g_c: 0.1 # gyro noise density [rad/s/sqrt(Hz)]
+    # sigma_a_c: 0.1 # accelerometer noise density [m/s^2/sqrt(Hz)]
+    # sigma_bg: 0.03 # gyro bias prior [rad/s]
+    # sigma_ba: 0.1 # accelerometer bias prior [m/s^2]
+    # sigma_gw_c: 0.0001 # gyro drift noise density [rad/s^s/sqrt(Hz)]
+    # sigma_aw_c: 0.0001 # accelerometer drift noise density [m/s^2/sqrt(Hz)]
 
     # sigma set 29 (Outdoor, medium velocity, medium shock, x20 noise)
     # sigma_g_c: 0.04 # gyro noise density [rad/s/sqrt(Hz)]
@@ -166,7 +178,8 @@ useImu: true
 
 # some options for how and what to publish -- optional in ROS-free version
 publishing_options:
-    publish_rate: 50                   # rate at which odometry updates are published only works properly if imu_rate/publish_rate is an integer!!
+    # publish_rate: 50                   # rate at which odometry updates are published only works properly if imu_rate/publish_rate is an integer!!
+    publish_rate: 20                   # rate at which odometry updates are published only works properly if imu_rate/publish_rate is an integer!!
     publishLandmarks: false            # select, if you want to publish landmarks at all
     landmarkQualityThreshold: 1.0e-2   # landmark with lower quality will not be published
     maximumLandmarkQuality: 0.05       # landmark with higher quality will be published with the maximum colour intensity

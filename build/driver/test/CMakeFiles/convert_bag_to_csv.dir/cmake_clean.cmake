@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/test/convert_bag_to_csv"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/test/convert_bag_to_csv.pdb"
   "CMakeFiles/convert_bag_to_csv.dir/src/ConvertBagToCsv.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/test/convert_bag_to_csv.pdb"
-  "/home/nguyen/vio_ws/devel/lib/test/convert_bag_to_csv"
 )
 
 # Per-language clean rules from dependency scanning.

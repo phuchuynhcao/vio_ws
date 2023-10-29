@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/test/correct_camera_stamp"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/test/correct_camera_stamp.pdb"
   "CMakeFiles/correct_camera_stamp.dir/src/CorrectCameraStamp.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/test/correct_camera_stamp.pdb"
-  "/home/nguyen/vio_ws/devel/lib/test/correct_camera_stamp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_util.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_util.pdb"
   "CMakeFiles/okvis_util.dir/src/dependency-tracker.cc.o"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_util.pdb"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_util.a"
 )
 
 # Per-language clean rules from dependency scanning.

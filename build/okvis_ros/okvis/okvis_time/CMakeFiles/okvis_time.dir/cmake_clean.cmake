@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/okvis_time.dir/src/Time.cpp.o"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_time.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_time.pdb"
   "CMakeFiles/okvis_time.dir/src/Duration.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_time.pdb"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_time.a"
+  "CMakeFiles/okvis_time.dir/src/Time.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

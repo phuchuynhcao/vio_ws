@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_kinematics.a"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_kinematics.pdb"
   "CMakeFiles/okvis_kinematics.dir/src/dependency-tracker.cc.o"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_kinematics.pdb"
-  "/home/nguyen/vio_ws/devel/lib/libokvis_kinematics.a"
 )
 
 # Per-language clean rules from dependency scanning.

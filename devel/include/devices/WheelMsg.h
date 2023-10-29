@@ -8,7 +8,7 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <memory>
 
 #include <ros/types.h>
 #include <ros/serialization.h>
@@ -82,6 +82,24 @@ ros::message_operations::Printer< ::devices::WheelMsg_<ContainerAllocator> >::st
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::devices::WheelMsg_<ContainerAllocator1> & lhs, const ::devices::WheelMsg_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.encoder_velocity_left == rhs.encoder_velocity_left &&
+    lhs.encoder_velocity_right == rhs.encoder_velocity_right &&
+    lhs.encoder_position_left == rhs.encoder_position_left &&
+    lhs.encoder_position_right == rhs.encoder_position_right;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::devices::WheelMsg_<ContainerAllocator1> & lhs, const ::devices::WheelMsg_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace devices
 
 namespace ros
@@ -91,23 +109,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'devices': ['/home/nguyen/vio_ws/src/driver/devices/slider/msg', '/home/nguyen/vio_ws/src/driver/devices/span/msg', '/home/nguyen/vio_ws/src/driver/devices/wheel/msg', '/home/nguyen/vio_ws/src/driver/devices/gps/msg']}
 
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
-
-
-
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::WheelMsg_<ContainerAllocator> >
-  : FalseType
-  { };
-
-template <class ContainerAllocator>
-struct IsFixedSize< ::devices::WheelMsg_<ContainerAllocator> const>
-  : FalseType
-  { };
 
 template <class ContainerAllocator>
 struct IsMessage< ::devices::WheelMsg_<ContainerAllocator> >
@@ -117,6 +119,16 @@ struct IsMessage< ::devices::WheelMsg_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsMessage< ::devices::WheelMsg_<ContainerAllocator> const>
   : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::WheelMsg_<ContainerAllocator> >
+  : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsFixedSize< ::devices::WheelMsg_<ContainerAllocator> const>
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -159,46 +171,44 @@ struct Definition< ::devices::WheelMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Message of information read from the Wheelchair\n\
-\n\
-# Hedaer of this ros message\n\
-# header.seq        : consecutive increasing ID\n\
-# header.stamp      : timestamp of the message\n\
-#   .sec            : seconds\n\
-#   .nsec           : nanoseconds\n\
-# header.frame_id   : name of this data\n\
-Header header\n\
-\n\
-int32 encoder_velocity_left     # [pulse/T]\n\
-int32 encoder_velocity_right    # [pulse/T]\n\
-int32 encoder_position_left     # [pulse]\n\
-int32 encoder_position_right    # [pulse]\n\
-# float64 wheel_velocity_left     # [m/s]  = encoder_velocity_left  * (f * circum / resol)\n\
-# float64 wheel_velocity_right    # [m/s]  = encoder_velocity_right * (f * circum / resol)\n\
-# float64 wheel_position_left     # [m]    = encoder_position_left  * (circum / resol)\n\
-# float64 wheel_position_right    # [m]    = encoder_position_right * (circum / resol)\n\
-\n\
-# Encoder resolution: 3200 pulse/round\n\
-# Wheel circumference: 1.433 meter\n\
-# Sampling frequency (f = 1/T): 100Hz\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "# Message of information read from the Wheelchair\n"
+"\n"
+"# Hedaer of this ros message\n"
+"# header.seq        : consecutive increasing ID\n"
+"# header.stamp      : timestamp of the message\n"
+"#   .sec            : seconds\n"
+"#   .nsec           : nanoseconds\n"
+"# header.frame_id   : name of this data\n"
+"Header header\n"
+"\n"
+"int32 encoder_velocity_left     # [pulse/T]\n"
+"int32 encoder_velocity_right    # [pulse/T]\n"
+"int32 encoder_position_left     # [pulse]\n"
+"int32 encoder_position_right    # [pulse]\n"
+"# float64 wheel_velocity_left     # [m/s]  = encoder_velocity_left  * (f * circum / resol)\n"
+"# float64 wheel_velocity_right    # [m/s]  = encoder_velocity_right * (f * circum / resol)\n"
+"# float64 wheel_position_left     # [m]    = encoder_position_left  * (circum / resol)\n"
+"# float64 wheel_position_right    # [m]    = encoder_position_right * (circum / resol)\n"
+"\n"
+"# Encoder resolution: 3200 pulse/round\n"
+"# Wheel circumference: 1.433 meter\n"
+"# Sampling frequency (f = 1/T): 100Hz\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::devices::WheelMsg_<ContainerAllocator>&) { return value(); }

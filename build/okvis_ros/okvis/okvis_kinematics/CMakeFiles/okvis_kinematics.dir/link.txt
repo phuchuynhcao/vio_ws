@@ -1,2 +1,2 @@
-/usr/bin/ar qc /home/nguyen/vio_ws/devel/lib/libokvis_kinematics.a  CMakeFiles/okvis_kinematics.dir/src/dependency-tracker.cc.o
-/usr/bin/ranlib /home/nguyen/vio_ws/devel/lib/libokvis_kinematics.a
+/usr/bin/ar qc /home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_kinematics.a  CMakeFiles/okvis_kinematics.dir/src/dependency-tracker.cc.o
+/usr/bin/ranlib /home/phuccao/OKVIS/vio_ws/devel/lib/libokvis_kinematics.a

@@ -4,9 +4,10 @@
   schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>catkin</name>
-  <version>0.7.20</version>
+  <version>0.8.10</version>
   <description>Low-level build system macros and infrastructure for ROS.</description>
-  <maintainer email="dthomas@osrfoundation.org">Dirk Thomas</maintainer>
+  <maintainer email="michael@openrobotics.org">Michael Carroll</maintainer>
+  <maintainer email="tfoote@openrobotics.org">Tully Foote</maintainer>
   <license>BSD</license>
 
   <url type="website">http://wiki.ros.org/catkin</url>
@@ -25,7 +26,11 @@
   <depend condition="$ROS_PYTHON_VERSION == 3">python3-empy</depend>
 
   <buildtool_depend>cmake</buildtool_depend>
+  <buildtool_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</buildtool_depend>
+  <buildtool_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_depend>
+
   <buildtool_export_depend>cmake</buildtool_export_depend>
+  <buildtool_export_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_export_depend>
 
   <build_export_depend>google-mock</build_export_depend>
   <build_export_depend>gtest</build_export_depend>

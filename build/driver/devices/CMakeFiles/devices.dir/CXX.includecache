@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,45 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/impl/unix.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include/serial/impl/unix.h
 serial/serial.h
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/impl/serial/serial.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include/serial/impl/serial/serial.h
 pthread.h
 -
 
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/impl/win.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include/serial/impl/win.h
 serial/serial.h
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/impl/serial/serial.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include/serial/impl/serial/serial.h
 windows.h
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/impl/windows.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/include/serial/impl/windows.h
 
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/serial.h
-limits
--
-vector
--
-string
--
-cstring
--
-sstream
--
-exception
--
-stdexcept
--
-serial/v8stdint.h
--
-
-/home/nguyen/vio_ws/src/driver/devices/serial/include/serial/v8stdint.h
-stddef.h
--
-stdio.h
--
-stdint.h
--
-
-/home/nguyen/vio_ws/src/driver/devices/serial/src/impl/list_ports/list_ports_linux.cc
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/impl/list_ports/list_ports_linux.cc
 vector
 -
 string
@@ -72,9 +46,9 @@ sys/stat.h
 unistd.h
 -
 serial/serial.h
-/home/nguyen/vio_ws/src/driver/devices/serial/src/impl/list_ports/serial/serial.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/impl/list_ports/serial/serial.h
 
-/home/nguyen/vio_ws/src/driver/devices/serial/src/impl/unix.cc
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/impl/unix.cc
 stdio.h
 -
 string.h
@@ -116,19 +90,45 @@ mach/clock.h
 mach/mach.h
 -
 serial/impl/unix.h
-/home/nguyen/vio_ws/src/driver/devices/serial/src/impl/serial/impl/unix.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/impl/serial/impl/unix.h
 IOKit/serial/ioss.h
 -
 
-/home/nguyen/vio_ws/src/driver/devices/serial/src/serial.cc
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/serial.cc
 algorithm
 -
 alloca.h
 -
 serial/serial.h
-/home/nguyen/vio_ws/src/driver/devices/serial/src/serial/serial.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/serial/serial.h
 serial/impl/win.h
-/home/nguyen/vio_ws/src/driver/devices/serial/src/serial/impl/win.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/serial/impl/win.h
 serial/impl/unix.h
-/home/nguyen/vio_ws/src/driver/devices/serial/src/serial/impl/unix.h
+/home/phuccao/OKVIS/vio_ws/src/driver/devices/serial/src/serial/impl/unix.h
+
+/opt/ros/noetic/include/serial/serial.h
+limits
+-
+vector
+-
+string
+-
+cstring
+-
+sstream
+-
+exception
+-
+stdexcept
+-
+serial/v8stdint.h
+-
+
+/opt/ros/noetic/include/serial/v8stdint.h
+stddef.h
+-
+stdio.h
+-
+stdint.h
+-
 

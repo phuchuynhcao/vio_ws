@@ -321,6 +321,7 @@ class Publisher
   /// @}
 
   ros::Time lastOdometryTime_;  ///< Timestamp of the last broadcasted transform. (publishPose())
+  // ros::Time lastOdometryCsvTime_;  ///< Timestamp of the last broadcasted transform. (publishPose())
   ros::Time lastOdometryTime2_; ///< Timestamp of the last published odometry message. (publishOdometry())
   ros::Time lastTransfromTime_; ///< Timestamp of the last published transform. (publishTransform())
 

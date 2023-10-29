@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/span_node.dir/span/src/span_node.cpp.o"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/devices/span_node"
+  "/home/phuccao/OKVIS/vio_ws/devel/lib/devices/span_node.pdb"
   "CMakeFiles/span_node.dir/span/src/SpanDriver.cpp.o"
-  "/home/nguyen/vio_ws/devel/lib/devices/span_node.pdb"
-  "/home/nguyen/vio_ws/devel/lib/devices/span_node"
+  "CMakeFiles/span_node.dir/span/src/span_node.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
